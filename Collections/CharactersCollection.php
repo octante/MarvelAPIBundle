@@ -9,9 +9,10 @@
 namespace Octante\MarvelAPIBundle\Collections;
 
 
+use Octante\MarvelAPIBundle\DataContainer\CharacterDataContainer;
 use Octante\MarvelAPIBundle\ValueObjects\DataWrapper;
 
-class CharactersCollection extends AbstractCollection
+class CharactersCollection
 {
     /**
      * @var DataWrapper
@@ -44,5 +45,28 @@ class CharactersCollection extends AbstractCollection
     public function getCharactersDataWrapper()
     {
         return $this->characterDataWrapper;
+    }
+
+    /**
+     * @param $data
+     *
+     * @return DataWrapper
+     */
+    protected static function parseDataWrapper($data)
+    {
+        return DataWrapper::create(
+            $data['code'],
+            $data['status'],
+            $data['copyright'],
+            $data['attributionText'],
+            $data['attributionHTML'],
+            CharacterDataContainer::create(
+                $data['data']['offset'],
+                $data['data']['limit'],
+                $data['data']['total'],
+                $data['data']['count'],
+                $data['data']['results']
+            ),
+            $data['etag']);
     }
 } 

@@ -118,9 +118,9 @@ class Creator
     private $series;
 
     /**
-     * @param $characterId
+     * @param $creatorId
      */
-    private function __construct(CharacterId $characterId)
+    private function __construct(CreatorId $characterId)
     {
         $this->id = $characterId;
     }

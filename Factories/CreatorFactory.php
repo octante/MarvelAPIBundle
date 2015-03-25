@@ -9,19 +9,13 @@
 namespace Octante\MarvelAPIBundle\Factories;
 
 use Octante\MarvelAPIBundle\Entities\Creator;
-use Octante\MarvelAPIBundle\Summaries\ComicSummary;
-use Octante\MarvelAPIBundle\Summaries\SeriesSummary;
-use Octante\MarvelAPIBundle\ValueObjects\ComicDate;
-use Octante\MarvelAPIBundle\ValueObjects\ComicId;
-use Octante\MarvelAPIBundle\ValueObjects\Image;
-use Octante\MarvelAPIBundle\ValueObjects\Price;
-use Octante\MarvelAPIBundle\ValueObjects\TextObject;
+use Octante\MarvelAPIBundle\ValueObjects\CreatorId;
 
 class CreatorFactory extends AbstractFactory
 {
     public function createCreator($creatorData)
     {
-        $creator = Creator::create(ComicId::create($creatorData['id']));
+        $creator = Creator::create(CreatorId::create($creatorData['id']));
 
         if (isset($creatorData['firstName'])) {
             $creator->setFirstName($creatorData['firstName']);
