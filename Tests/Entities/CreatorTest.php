@@ -23,29 +23,8 @@ use Octante\MarvelAPIBundle\ValueObjects\TextObject;
 use Octante\MarvelAPIBundle\ValueObjects\Thumbnail;
 use Octante\MarvelAPIBundle\ValueObjects\URI;
 
-class ComicTest extends \PHPUnit_Framework_TestCase
+class CreatorTest extends \PHPUnit_Framework_TestCase
 {
-    
-    /**
-     * when: comicEntityIsCreated
-     * with: textObjects
-     * should: setTextObjects
-     */
-    function test_comicEntityIsCreated_textObjects_setTextObjects()
-    {
-        $sut = $this->getSUT();
-        $textObjects = $sut->getTextObjects();
-
-        $expected = array(
-            TextObject::create(
-                'issue_solicit_text',
-                'en-us',
-                "It's the origin of the original Avenger, Ant-Man! Hank Pym has been known by a variety of names — including Ant-Man, Giant-Man, Goliath and Yellowjacket — he’s been an innovative scientist, a famed super hero, an abusive spouse and more. What demons drive a man like Hank Pym? And how did he begin his heroic career? "
-            )
-        );
-
-        $this->assertEquals($expected, $textObjects);
-    }
 
     /**
      * when: comicEntityIsCreated

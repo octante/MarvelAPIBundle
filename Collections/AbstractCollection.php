@@ -9,10 +9,31 @@
 namespace Octante\MarvelAPIBundle\Collections;
 
 
-use Octante\MarvelAPIBundle\ValueObjects\DataContainer;
+use Octante\MarvelAPIBundle\DataContainer\DataContainer;
 use Octante\MarvelAPIBundle\ValueObjects\DataWrapper;
 
 abstract class AbstractCollection
 {
-
+    /**
+     * @param $data
+     *
+     * @return DataWrapper
+     */
+    protected static function parseDataWrapper($data)
+    {
+        return DataWrapper::create(
+            $data['code'],
+            $data['status'],
+            $data['copyright'],
+            $data['attributionText'],
+            $data['attributionHTML'],
+            DataContainer::create(
+                $data['data']['offset'],
+                $data['data']['limit'],
+                $data['data']['total'],
+                $data['data']['count'],
+                $data['data']['results']
+            ),
+            $data['etag']);
+    }
 } 

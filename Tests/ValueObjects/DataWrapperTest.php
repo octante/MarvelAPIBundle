@@ -67,7 +67,7 @@ class DataWrapperTest extends \PHPUnit_Framework_TestCase
      */
     private function getDataConteinerMock()
     {
-        $dataContainerMock = $this->getMockBuilder('Octante\MarvelAPIBundle\ValueObjects\DataContainer')
+        $dataContainerMock = $this->getMockBuilder('Octante\MarvelAPIBundle\DataContainer\DataContainer')
             ->disableOriginalConstructor()
             ->getMock();
         return $dataContainerMock;

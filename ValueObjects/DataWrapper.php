@@ -9,6 +9,8 @@
 namespace Octante\MarvelAPIBundle\ValueObjects;
 
 
+use Octante\MarvelAPIBundle\DataContainer\DataContainer;
+
 class DataWrapper
 {
     /**

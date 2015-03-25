@@ -23,7 +23,7 @@ use Octante\MarvelAPIBundle\ValueObjects\URI;
 use Octante\MarvelAPIBundle\ValueObjects\TextObject;
 use Octante\MarvelAPIBundle\Lists\EventList;
 
-class ComicFactory extends AbstractResourceFactory
+class ComicFactory extends AbstractFactory
 {
     public function createComic($comicData)
     {
@@ -96,51 +96,22 @@ class ComicFactory extends AbstractResourceFactory
             $comic->setPrices($this->getPrices($comicData['prices']));
         }
         if (!empty($comicData['thumbnail'])) {
-            $comic->setThumbnail(
-                Thumbnail::create(
-                    $comicData['thumbnail']['path'],
-                    $comicData['thumbnail']['extension']
-                )
-            );
+            $comic->setThumbnail($this->createThumbnail($comicData));
         }
         if (!empty($comicData['images'])) {
             $comic->setImages($this->getImages($comicData['images']));
         }
         if (!empty($comicData['creators'])) {
-            $creators = CreatorList::create(
-                $comicData['creators']['available'],
-                $comicData['creators']['returned'],
-                $comicData['creators']['collectionURI'],
-                $comicData['creators']['items']
-            );
-            $comic->setCreators($creators);
+            $comic->setCreators($this->createCreatorsList($comicData));
         }
         if (!empty($comicData['characters'])) {
-            $characters = CharacterList::create(
-                $comicData['characters']['available'],
-                $comicData['characters']['returned'],
-                $comicData['characters']['collectionURI'],
-                $comicData['characters']['items']
-            );
-            $comic->setCharacters($characters);
+            $comic->setCharacters($this->createCharactersList($comicData));
         }
         if (!empty($comicData['stories'])) {
-            $stories = StoryList::create(
-                $comicData['stories']['available'],
-                $comicData['stories']['returned'],
-                $comicData['stories']['collectionURI'],
-                $comicData['stories']['items']
-            );
-            $comic->setStories($stories);
+            $comic->setStories($this->createStoriesList($comicData));
         }
         if (!empty($comicData['events'])) {
-            $events = EventList::create(
-                $comicData['events']['available'],
-                $comicData['events']['returned'],
-                $comicData['events']['collectionURI'],
-                $comicData['events']['items']
-            );
-            $comic->setEvents($events);
+            $comic->setEvents($this->createEventsList($comicData));
         }
 
         return $comic;

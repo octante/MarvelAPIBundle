@@ -9,7 +9,7 @@
 namespace ValueObjects;
 
 
-use Octante\MarvelAPIBundle\ValueObjects\DataContainer;
+use Octante\MarvelAPIBundle\DataContainer\DataContainer;
 
 class DataContainerTest extends \PHPUnit_Framework_TestCase
 {
@@ -21,7 +21,7 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
     function test_createIsCalled_withValidParameters_DataContainerInstanceIsReturned()
     {
         $sut = DataContainer::create(1, 2, 3, 4, array());
-        $this->assertInstanceOf('Octante\MarvelAPIBundle\ValueObjects\DataContainer', $sut);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\DataContainer\DataContainer', $sut);
     }
     
     /**

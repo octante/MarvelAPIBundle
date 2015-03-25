@@ -37,9 +37,9 @@ class ComicSummary
      *
      * @return SerieSummary
      */
-    public static function create($resourceURI,$name)
+    public static function create($resourceURI, $name)
     {
-        return new ComicSummary($resourceURI,$name);
+        return new ComicSummary($resourceURI, $name);
     }
 
     /**

@@ -198,7 +198,6 @@ class Comic
      * A resource list containing the creators associated with this comic.,
      *
      * @var CreatorList
-     * @todo Crate Creator List class
      */
     private $creators;
 
@@ -206,7 +205,6 @@ class Comic
      * A resource list containing the characters which appear in this comic.,
      *
      * @var CharacterList
-     * @todo Create CharacterList class
      */
     private $characters;
 
@@ -214,7 +212,6 @@ class Comic
      * A resource list containing the stories which appear in this comic.,
      *
      * @var StoryList
-     * @todo Create StoryList class
      */
     private $stories;
 
@@ -222,7 +219,6 @@ class Comic
      * A resource list containing the events in which this comic appears.
      *
      * @var EventList
-     * @todo Create EventList class
      */
     private $events;
 

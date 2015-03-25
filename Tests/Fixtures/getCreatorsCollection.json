@@ -1,0 +1,476 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2015 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2015 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2015 MARVEL</a>",
+    "etag": "216d486d20d622ffb6d7d9af7cfdbb56f44838e6",
+    "data": {
+        "offset": 0,
+        "limit": 5,
+        "total": 5872,
+        "count": 5,
+        "results": [
+            {
+                "id": 12646,
+                "firstName": "Dean",
+                "middleName": "",
+                "lastName": "Zachary",
+                "suffix": "",
+                "fullName": "Dean Zachary",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12646",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12646/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12646/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12646/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119939",
+                            "name": "story from Star Wars: Knights Of The Old Republic (2006) #38",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12646/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/creators/12646/dean_zachary?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ]
+            },
+            {
+                "id": 12543,
+                "firstName": "Jim",
+                "middleName": "",
+                "lastName": "Woodring",
+                "suffix": "",
+                "fullName": "Jim Woodring",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12543",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12543/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12543/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 5,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12543/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119185",
+                            "name": "story from Star Wars Tales (1999) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119760",
+                            "name": "story from Star Wars: Jabba The Hutt - Betrayal (1995) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119762",
+                            "name": "story from Star Wars: Jabba The Hutt - The Dynasty Trap (1995) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119764",
+                            "name": "story from Star Wars: Jabba The Hutt - The Gaar Suppoon Hit (1995) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119766",
+                            "name": "story from Star Wars: Jabba The Hutt - The Hunger Of Princess Nampi (1995) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 5
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12543/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/creators/12543/jim_woodring?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ]
+            },
+            {
+                "id": 12545,
+                "firstName": "Ryder",
+                "middleName": "",
+                "lastName": "Windham",
+                "suffix": "",
+                "fullName": "Ryder Windham",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12545",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12545/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12545/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 20,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12545/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119189",
+                            "name": "story from Star Wars Tales (1999) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119195",
+                            "name": "story from Star Wars Tales (1999) #6",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119552",
+                            "name": "story from Star Wars: Droids (1994) #5",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119556",
+                            "name": "story from Star Wars: Droids (1995) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119558",
+                            "name": "story from Star Wars: Droids (1995) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119560",
+                            "name": "story from Star Wars: Droids (1995) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119562",
+                            "name": "story from Star Wars: Droids (1995) #4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119572",
+                            "name": "story from Star Wars: Droids - The Protocol Offensive (1997) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119658",
+                            "name": "story from Star Wars: Episode I - Qui-Gon Jinn (1999) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119660",
+                            "name": "story from Star Wars: Episode I - The Phantom Menace (1999) #0.5",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119813",
+                            "name": "story from Star Wars: Jedi Quest (2001) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119815",
+                            "name": "story from Star Wars: Jedi Quest (2001) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119817",
+                            "name": "story from Star Wars: Jedi Quest (2001) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119819",
+                            "name": "story from Star Wars: Jedi Quest (2001) #4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120163",
+                            "name": "story from Star Wars: Qui-Gon & Obi-Wan - Last Stand On Ord Mantell (2000) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120165",
+                            "name": "story from Star Wars: Qui-Gon & Obi-Wan - Last Stand On Ord Mantell (2000) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120167",
+                            "name": "story from Star Wars: Qui-Gon & Obi-Wan - Last Stand On Ord Mantell (2000) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120309",
+                            "name": "story from Star Wars: Shadow Stalker (1997) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120456",
+                            "name": "story from Star Wars: The Mixed-Up Droid (1995) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120584",
+                            "name": "story from Star Wars: X-Wing Rogue Squadron Special (1995) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12545/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/creators/12545/ryder_windham?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ]
+            },
+            {
+                "id": 12636,
+                "firstName": "Colin",
+                "middleName": "",
+                "lastName": "Wilson",
+                "suffix": "",
+                "fullName": "Colin Wilson",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12636",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12636/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12636/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 37,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12636/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119726",
+                            "name": "story from Star Wars: Invasion (2009) #0",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119728",
+                            "name": "story from Star Wars: Invasion (2009) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119730",
+                            "name": "story from Star Wars: Invasion (2009) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119732",
+                            "name": "story from Star Wars: Invasion (2009) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119734",
+                            "name": "story from Star Wars: Invasion (2009) #4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119736",
+                            "name": "story from Star Wars: Invasion (2009) #5",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119738",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119740",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119742",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119744",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119746",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #5",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119748",
+                            "name": "story from Star Wars: Invasion - Rescues (2010) #6",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119750",
+                            "name": "story from Star Wars: Invasion - Revelations (2011) #1",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119752",
+                            "name": "story from Star Wars: Invasion - Revelations (2011) #2",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119754",
+                            "name": "story from Star Wars: Invasion - Revelations (2011) #3",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119756",
+                            "name": "story from Star Wars: Invasion - Revelations (2011) #4",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119758",
+                            "name": "story from Star Wars: Invasion - Revelations (2011) #5",
+                            "type": "interiorStory"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119896",
+                            "name": "cover from Star Wars: Knights Of The Old Republic (2006) #16",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119898",
+                            "name": "cover from Star Wars: Knights Of The Old Republic (2006) #17",
+                            "type": "cover"
+                        },
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/119900",
+                            "name": "cover from Star Wars: Knights Of The Old Republic (2006) #18",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12636/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/creators/12636/colin_wilson?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ]
+            },
+            {
+                "id": 12672,
+                "firstName": "John",
+                "middleName": "",
+                "lastName": "Whitman",
+                "suffix": "",
+                "fullName": "John Whitman",
+                "modified": "1969-12-31T19:00:00-0500",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available",
+                    "extension": "jpg"
+                },
+                "resourceURI": "http://gateway.marvel.com/v1/public/creators/12672",
+                "comics": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12672/comics",
+                    "items": [],
+                    "returned": 0
+                },
+                "series": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12672/series",
+                    "items": [],
+                    "returned": 0
+                },
+                "stories": {
+                    "available": 1,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12672/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/120456",
+                            "name": "story from Star Wars: The Mixed-Up Droid (1995) #1",
+                            "type": "interiorStory"
+                        }
+                    ],
+                    "returned": 1
+                },
+                "events": {
+                    "available": 0,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/creators/12672/events",
+                    "items": [],
+                    "returned": 0
+                },
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/creators/12672/john_whitman?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ]
+            }
+        ]
+    }
+}

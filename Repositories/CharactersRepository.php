@@ -8,11 +8,11 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-use Octante\MarvelAPIBundle\Collections\ComicsCollection;
+use Octante\MarvelAPIBundle\Collections\CharactersCollection;
+use Octante\MarvelAPIBundle\Query\CharacterQuery;
 use Octante\MarvelAPIBundle\Lib\Client;
-use Octante\MarvelAPIBundle\Query\ComicQuery;
 
-class ComicsRepository
+class CharactersRepository
 {
     private $client;
 
@@ -25,22 +25,22 @@ class ComicsRepository
     }
 
     /**
-     * @param ComicQuery $query
+     * @param CharacterQuery $query
      *
-     * @return ComicsCollection
+     * @return CharactersCollection
      */
-    public function getComics(ComicQuery $query)
+    public function getCharacters(CharacterQuery $query)
     {
         $data = $this->client
                      ->send($query->getQuery());
 
-        return ComicsCollection::create(json_decode($data, true));
+        return CharactersCollection::create(json_decode($data, true));
     }
 
     /**
-     * @param int $comicId
+     * @param int $characterId
      */
-    public function getComicById($comicId)
+    public function getCharacterById($characterId)
     {
         // TO IMPLEMENT
     }
