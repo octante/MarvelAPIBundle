@@ -264,9 +264,8 @@ class ComicTest extends \PHPUnit_Framework_TestCase
             'http://gateway.marvel.com/v1/public/comics/41530/characters',
             array(
                 array(
-                    'resourceURI' => 'http://gateway.marvel.com/v1/public/creators/4430',
-                    'name' => 'Jeff Young',
-                    'role' => 'editor'
+                    'resourceURI' => 'http://gateway.marvel.com/v1/public/characters/4430',
+                    'name' => 'Jeff Young'
                 )
             )
         );

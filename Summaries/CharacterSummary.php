@@ -31,7 +31,7 @@ class CharacterSummary
      * @param $name
      * @param $role
      */
-    private function __construct($resourceURI, $name, $role)
+    private function __construct($resourceURI, $name, $role = '')
     {
         $this->resourceURI = $resourceURI;
         $this->name = $name;
@@ -45,7 +45,7 @@ class CharacterSummary
      *
      * @return CharacterSummary
      */
-    public static function create($resourceURI, $name, $role)
+    public static function create($resourceURI, $name, $role = '')
     {
         return new CharacterSummary($resourceURI, $name, $role);
     }

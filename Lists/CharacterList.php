@@ -87,7 +87,7 @@ class CharacterList
             $characterSummaries[] = CharacterSummary::create(
                 $item['resourceURI'],
                 $item['name'],
-                $item['role']
+                !empty($item['role']) ? $item['role'] : ''
             );
         }
         return $characterSummaries;

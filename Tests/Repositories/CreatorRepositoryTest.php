@@ -9,7 +9,6 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
-use Octante\MarvelAPIBundle\Repositories\CharactersRepository;
 use Octante\MarvelAPIBundle\Repositories\CreatorsRepository;
 
 class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -44,11 +43,11 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * when: getCharacterIsCalled
+     * when: getCreatorIsCalled
      * with: withAQuery
-     * should: clientReturnCharacterCollection
+     * should: clientReturnCreatorCollection
      */
-    function test_getCharacterIsCalled_withAQuery_clientReturnCharacterCollection()
+    function test_getCreatorIsCalled_withAQuery_clientReturnCreatorCollection()
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharactersCollection.json');
 

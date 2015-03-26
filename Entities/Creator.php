@@ -12,8 +12,7 @@ namespace Octante\MarvelAPIBundle\Entities;
 use Octante\MarvelAPIBundle\Lists\ComicList;
 use Octante\MarvelAPIBundle\Lists\EventList;
 use Octante\MarvelAPIBundle\Lists\StoryList;
-use Octante\MarvelAPIBundle\Summaries\SeriesSummary;
-use Octante\MarvelAPIBundle\ValueObjects\CharacterId;
+use Octante\MarvelAPIBundle\Summaries\SeriesSummary;;
 use Octante\MarvelAPIBundle\ValueObjects\CreatorId;
 use Octante\MarvelAPIBundle\ValueObjects\Image;
 
@@ -118,7 +117,9 @@ class Creator
     private $series;
 
     /**
-     * @param $creatorId
+     * @param CreatorId $characterId
+     *
+     * @internal param $creatorId
      */
     private function __construct(CreatorId $characterId)
     {
@@ -136,7 +137,7 @@ class Creator
     }
 
     /**
-     * @param \Octante\MarvelAPIBundle\Lists\ComicList $comics
+     * @param ComicList $comics
      */
     public function setComics($comics)
     {
@@ -144,7 +145,7 @@ class Creator
     }
 
     /**
-     * @return \Octante\MarvelAPIBundle\Lists\ComicList
+     * @return ComicList
      */
     public function getComics()
     {
@@ -152,7 +153,7 @@ class Creator
     }
 
     /**
-     * @param \Octante\MarvelAPIBundle\Lists\EventList $events
+     * @param EventList $events
      */
     public function setEvents($events)
     {
@@ -160,7 +161,7 @@ class Creator
     }
 
     /**
-     * @return \Octante\MarvelAPIBundle\Lists\EventList
+     * @return EventList
      */
     public function getEvents()
     {
@@ -280,7 +281,7 @@ class Creator
     }
 
     /**
-     * @param \Octante\MarvelAPIBundle\Summaries\SeriesSummary $series
+     * @param SeriesSummary $series
      */
     public function setSeries($series)
     {
@@ -288,7 +289,7 @@ class Creator
     }
 
     /**
-     * @return \Octante\MarvelAPIBundle\Summaries\SeriesSummary
+     * @return SeriesSummary
      */
     public function getSeries()
     {
@@ -296,7 +297,7 @@ class Creator
     }
 
     /**
-     * @param \Octante\MarvelAPIBundle\Lists\StoryList $stories
+     * @param StoryList $stories
      */
     public function setStories($stories)
     {
@@ -304,7 +305,7 @@ class Creator
     }
 
     /**
-     * @return \Octante\MarvelAPIBundle\Lists\StoryList
+     * @return StoryList
      */
     public function getStories()
     {
@@ -328,7 +329,7 @@ class Creator
     }
 
     /**
-     * @param \Octante\MarvelAPIBundle\ValueObjects\Image $thumbnails
+     * @param Image $thumbnails
      */
     public function setThumbnails($thumbnails)
     {
@@ -336,7 +337,7 @@ class Creator
     }
 
     /**
-     * @return \Octante\MarvelAPIBundle\ValueObjects\Image
+     * @return Image
      */
     public function getThumbnails()
     {
