@@ -8,9 +8,9 @@
 
 namespace Octante\MarvelAPIBundle\Factories;
 
-use Octante\MarvelAPIBundle\Entities\Character;
-use Octante\MarvelAPIBundle\ValueObjects\CharacterId;
-use Octante\MarvelAPIBundle\ValueObjects\URI;
+use Octante\MarvelAPIBundle\Model\Entities\Character;
+use Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId;
+use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
 class CharacterFactory extends AbstractFactory
 {

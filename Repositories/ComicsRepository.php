@@ -8,9 +8,9 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-use Octante\MarvelAPIBundle\Collections\ComicsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
-use Octante\MarvelAPIBundle\Query\ComicQuery;
+use Octante\MarvelAPIBundle\Model\Query\ComicQuery;
 
 class ComicsRepository
 {

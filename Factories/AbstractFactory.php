@@ -9,13 +9,13 @@
 namespace Octante\MarvelAPIBundle\Factories;
 
 
-use Octante\MarvelAPIBundle\Lists\CharacterList;
-use Octante\MarvelAPIBundle\Lists\ComicList;
-use Octante\MarvelAPIBundle\Lists\CreatorList;
-use Octante\MarvelAPIBundle\Lists\EventList;
-use Octante\MarvelAPIBundle\Lists\SerieList;
-use Octante\MarvelAPIBundle\Lists\StoryList;
-use Octante\MarvelAPIBundle\ValueObjects\Thumbnail;
+use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
+use Octante\MarvelAPIBundle\Model\Lists\ComicList;
+use Octante\MarvelAPIBundle\Model\Lists\CreatorList;
+use Octante\MarvelAPIBundle\Model\Lists\EventList;
+use Octante\MarvelAPIBundle\Model\Lists\SerieList;
+use Octante\MarvelAPIBundle\Model\Lists\StoryList;
+use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
 
 class AbstractFactory
 {

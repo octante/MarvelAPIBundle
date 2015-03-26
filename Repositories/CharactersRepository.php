@@ -8,8 +8,8 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-use Octante\MarvelAPIBundle\Collections\CharactersCollection;
-use Octante\MarvelAPIBundle\Query\CharacterQuery;
+use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
+use Octante\MarvelAPIBundle\Model\Query\CharacterQuery;
 use Octante\MarvelAPIBundle\Lib\Client;
 
 class CharactersRepository

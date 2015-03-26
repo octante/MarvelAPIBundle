@@ -19,7 +19,7 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->client = $this->getMock('Octante\MarvelAPIBundle\Lib\Client');
-        $this->queryMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Query\CreatorQuery')
+        $this->queryMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Model\Query\CreatorQuery')
             ->disableOriginalConstructor()
             ->getMock();
     }

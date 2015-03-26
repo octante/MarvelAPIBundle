@@ -8,20 +8,15 @@
 
 namespace Octante\MarvelAPIBundle\Factories;
 
-use Octante\MarvelAPIBundle\Entities\Comic;
-use Octante\MarvelAPIBundle\Lists\CharacterList;
-use Octante\MarvelAPIBundle\Lists\CreatorList;
-use Octante\MarvelAPIBundle\Lists\StoryList;
-use Octante\MarvelAPIBundle\Summaries\ComicSummary;
-use Octante\MarvelAPIBundle\Summaries\SeriesSummary;
-use Octante\MarvelAPIBundle\ValueObjects\ComicDate;
-use Octante\MarvelAPIBundle\ValueObjects\ComicId;
-use Octante\MarvelAPIBundle\ValueObjects\Image;
-use Octante\MarvelAPIBundle\ValueObjects\Price;
-use Octante\MarvelAPIBundle\ValueObjects\Thumbnail;
-use Octante\MarvelAPIBundle\ValueObjects\URI;
-use Octante\MarvelAPIBundle\ValueObjects\TextObject;
-use Octante\MarvelAPIBundle\Lists\EventList;
+use Octante\MarvelAPIBundle\Model\Entities\Comic;
+use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate;
+use Octante\MarvelAPIBundle\Model\ValueObjects\ComicId;
+use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
+use Octante\MarvelAPIBundle\Model\ValueObjects\Price;
+use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
+use Octante\MarvelAPIBundle\Model\ValueObjects\TextObject;
 
 class ComicFactory extends AbstractFactory
 {

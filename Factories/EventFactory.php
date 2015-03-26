@@ -8,10 +8,10 @@
 
 namespace Octante\MarvelAPIBundle\Factories;
 
-use Octante\MarvelAPIBundle\Entities\Event;
-use Octante\MarvelAPIBundle\Summaries\EventSummary;
-use Octante\MarvelAPIBundle\ValueObjects\EventId;
-use Octante\MarvelAPIBundle\ValueObjects\URI;
+use Octante\MarvelAPIBundle\Model\Entities\Event;
+use Octante\MarvelAPIBundle\Model\Summaries\EventSummary;
+use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
+use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
 class EventFactory extends AbstractFactory
 {

@@ -8,9 +8,9 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-use Octante\MarvelAPIBundle\Collections\EventsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
-use Octante\MarvelAPIBundle\Query\EventQuery;
+use Octante\MarvelAPIBundle\Model\Query\EventQuery;
 
 class EventsRepository
 {

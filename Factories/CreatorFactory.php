@@ -8,8 +8,8 @@
 
 namespace Octante\MarvelAPIBundle\Factories;
 
-use Octante\MarvelAPIBundle\Entities\Creator;
-use Octante\MarvelAPIBundle\ValueObjects\CreatorId;
+use Octante\MarvelAPIBundle\Model\Entities\Creator;
+use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
 
 class CreatorFactory extends AbstractFactory
 {

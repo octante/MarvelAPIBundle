@@ -9,8 +9,6 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
-use Octante\MarvelAPIBundle\Repositories\CharactersRepository;
-use Octante\MarvelAPIBundle\Repositories\CreatorsRepository;
 use Octante\MarvelAPIBundle\Repositories\EventsRepository;
 
 class EventRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -21,7 +19,7 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->client = $this->getMock('Octante\MarvelAPIBundle\Lib\Client');
-        $this->queryMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Query\EventQuery')
+        $this->queryMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Model\Query\EventQuery')
             ->disableOriginalConstructor()
             ->getMock();
     }

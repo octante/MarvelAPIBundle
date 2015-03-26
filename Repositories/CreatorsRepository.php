@@ -8,9 +8,9 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-use Octante\MarvelAPIBundle\Collections\CreatorsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
-use Octante\MarvelAPIBundle\Query\CreatorQuery;
+use Octante\MarvelAPIBundle\Model\Query\CreatorQuery;
 
 class CreatorsRepository
 {
