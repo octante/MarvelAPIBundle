@@ -40,13 +40,15 @@ class ComicsRepository
     }
 
     /**
-     * @param ComicId $comicId
+     * @param int $comicId
      *
      * @return ComicsCollection
      */
-    public function getComicById(ComicId $comicId)
+    public function getComicById($comicId)
     {
-        $baseUrl = BaseURL::create('comics', $comicId->getComicId());
+        $baseUrl = BaseURL::create(
+            'comics', ComicId::create($comicId)->getComicId()
+        );
 
         $data = $this->client
             ->send($baseUrl->getURL());
@@ -55,53 +57,69 @@ class ComicsRepository
     }
 
     /**
-     * @param ComicId $comicId
+     * @param int $comicId
      * @param ComicQuery $comicQuery
      *
      * @return ComicsCollection
      */
-    public function getCharactersFromComic(ComicId $comicId, ComicQuery $comicQuery)
+    public function getCharactersFromComic($comicId, ComicQuery $comicQuery)
     {
-        $baseUrl = BaseURL::create('comics', $comicId->getComicId(), 'characters');
+        $baseUrl = BaseURL::create(
+            'comics',
+            ComicId::create($comicId)->getComicId(),
+            'characters'
+        );
 
         return $this->getComicsCollection($baseUrl, $comicQuery);
     }
 
     /**
-     * @param ComicId $comicId
+     * @param int $comicId
      * @param ComicQuery $comicQuery
      *
      * @return ComicsCollection
      */
-    public function getEventsFromComic(ComicId $comicId, ComicQuery $comicQuery)
+    public function getEventsFromComic($comicId, ComicQuery $comicQuery)
     {
-        $baseUrl = BaseURL::create('comics', $comicId->getComicId(), 'events');
+        $baseUrl = BaseURL::create(
+            'comics',
+            ComicId::create($comicId)->getComicId(),
+            'events'
+        );
 
         return $this->getComicsCollection($baseUrl, $comicQuery);
     }
 
     /**
-     * @param ComicId $comicId
+     * @param int $comicId
      * @param ComicQuery $comicQuery
      *
      * @return ComicsCollection
      */
-    public function getCreatorsFromComic(ComicId $comicId, ComicQuery $comicQuery)
+    public function getCreatorsFromComic($comicId, ComicQuery $comicQuery)
     {
-        $baseUrl = BaseURL::create('comics', $comicId->getComicId(), 'creators');
+        $baseUrl = BaseURL::create(
+            'comics',
+            ComicId::create($comicId)->getComicId(),
+            'creators'
+        );
 
         return $this->getComicsCollection($baseUrl, $comicQuery);
     }
 
     /**
-     * @param ComicId $comicId
+     * @param int $comicId
      * @param ComicQuery $comicQuery
      *
      * @return ComicsCollection
      */
-    public function getStoriesFromComic(ComicId $comicId, ComicQuery $comicQuery)
+    public function getStoriesFromComic($comicId, ComicQuery $comicQuery)
     {
-        $baseUrl = BaseURL::create('comics', $comicId->getComicId(), 'stories');
+        $baseUrl = BaseURL::create(
+            'comics',
+            ComicId::create($comicId)->getComicId(),
+            'stories'
+        );
 
         return $this->getComicsCollection($baseUrl, $comicQuery);
     }

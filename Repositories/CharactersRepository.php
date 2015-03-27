@@ -41,13 +41,16 @@ class CharactersRepository
     }
 
     /**
-     * @param CharacterId $characterId
+     * @param int $characterId
      *
      * @return CharactersCollection
      */
-    public function getCharacterById(CharacterId $characterId)
+    public function getCharacterById($characterId)
     {
-        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId());
+        $baseUrl = BaseURL::create(
+            'characters',
+            CharacterId::create($characterId)->getCharacterId()
+        );
 
         $data = $this->client
                      ->send($baseUrl->getURL());
@@ -56,53 +59,69 @@ class CharactersRepository
     }
 
     /**
-     * @param CharacterId $characterId
+     * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return CharactersCollection
      */
-    public function getComicsFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    public function getComicsFromCharacter($characterId, CharacterQuery $characterQuery)
     {
-        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'comics');
+        $baseUrl = BaseURL::create(
+            'characters',
+            CharacterId::create($characterId)->getCharacterId(),
+            'comics'
+        );
 
         return $this->getCharactersCollection($baseUrl, $characterQuery);
     }
 
     /**
-     * @param CharacterId $characterId
+     * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return CharactersCollection
      */
-    public function getEventsFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    public function getEventsFromCharacter($characterId, CharacterQuery $characterQuery)
     {
-        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'events');
+        $baseUrl = BaseURL::create(
+            'characters',
+            CharacterId::create($characterId)->getCharacterId(),
+            'events'
+        );
 
         return $this->getCharactersCollection($baseUrl, $characterQuery);
     }
 
     /**
-     * @param CharacterId $characterId
+     * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return CharactersCollection
      */
-    public function getSeriesFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    public function getSeriesFromCharacter($characterId, CharacterQuery $characterQuery)
     {
-        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'series');
+        $baseUrl = BaseURL::create(
+            'characters',
+            CharacterId::create($characterId)->getCharacterId(),
+            'series'
+        );
 
         return $this->getCharactersCollection($baseUrl, $characterQuery);
     }
 
     /**
-     * @param CharacterId $characterId
+     * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return CharactersCollection
      */
-    public function getStoriesFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    public function getStoriesFromCharacter($characterId, CharacterQuery $characterQuery)
     {
-        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'stories');
+        $baseUrl = BaseURL::create(
+            'characters',
+            CharacterId::create($characterId)->getCharacterId(),
+            'stories'
+        );
 
         return $this->getCharactersCollection($baseUrl, $characterQuery);
     }

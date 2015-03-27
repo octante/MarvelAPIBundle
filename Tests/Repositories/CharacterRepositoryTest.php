@@ -70,15 +70,13 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharacter.json');
 
-        $characterId = CharacterId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new CharactersRepository($this->client);
-        $characterData = $sut->getCharacterById($characterId);
+        $characterData = $sut->getCharacterById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\CharactersCollection', $characterData);
     }
 }

@@ -40,13 +40,16 @@ class CreatorsRepository
     }
 
     /**
-     * @param CreatorId $creatorId
+     * @param int $creatorId
      *
      * @return CreatorsCollection
      */
-    public function getCreatorById(CreatorId $creatorId)
+    public function getCreatorById($creatorId)
     {
-        $baseUrl = BaseURL::create('creators', $creatorId->getCreatorId());
+        $baseUrl = BaseURL::create(
+            'creators',
+            CreatorId::create($creatorId)->getCreatorId()
+        );
 
         $data = $this->client
             ->send($baseUrl->getURL());
@@ -55,53 +58,69 @@ class CreatorsRepository
     }
 
     /**
-     * @param CreatorId $creatorId
+     * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return CreatorsCollection
      */
-    public function getComicsFromCreator(CreatorId $creatorId, CreatorQuery $creatorQuery)
+    public function getComicsFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
-        $baseUrl = BaseURL::create('creators', $creatorId->getCreatorId(), 'comics');
+        $baseUrl = BaseURL::create(
+            'creators',
+            CreatorId::create($creatorId)->getCreatorId(),
+            'comics'
+        );
 
         return $this->getCreatorsCollection($baseUrl, $creatorQuery);
     }
 
     /**
-     * @param CreatorId $creatorId
+     * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return CreatorsCollection
      */
-    public function getEventsFromCreator(CreatorId $creatorId, CreatorQuery $creatorQuery)
+    public function getEventsFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
-        $baseUrl = BaseURL::create('comics', $creatorId->getCreatorId(), 'events');
+        $baseUrl = BaseURL::create(
+            'comics',
+            CreatorId::create($creatorId)->getCreatorId(),
+            'events'
+        );
 
         return $this->getCreatorsCollection($baseUrl, $creatorQuery);
     }
 
     /**
-     * @param CreatorId $creatorId
+     * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return CreatorsCollection
      */
-    public function getSeriesFromCreator(CreatorId $creatorId, CreatorQuery $creatorQuery)
+    public function getSeriesFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
-        $baseUrl = BaseURL::create('creators', $creatorId->getCreatorId(), 'series');
+        $baseUrl = BaseURL::create(
+            'creators',
+            CreatorId::create($creatorId)->getCreatorId(),
+            'series'
+        );
 
         return $this->getCreatorsCollection($baseUrl, $creatorQuery);
     }
 
     /**
-     * @param CreatorId $creatorId
+     * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return CreatorsCollection
      */
-    public function getStoriesFromCreator(CreatorId $creatorId, CreatorQuery $creatorQuery)
+    public function getStoriesFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
-        $baseUrl = BaseURL::create('creators', $creatorId->getCreatorId(), 'stories');
+        $baseUrl = BaseURL::create(
+            'creators',
+            CreatorId::create($creatorId)->getCreatorId(),
+            'stories'
+        );
 
         return $this->getCreatorsCollection($baseUrl, $creatorQuery);
     }

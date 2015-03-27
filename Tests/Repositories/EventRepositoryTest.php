@@ -70,15 +70,13 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEvent.json');
 
-        $eventId = EventId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new EventsRepository($this->client);
-        $eventData = $sut->getEventById($eventId);
+        $eventData = $sut->getEventById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\EventsCollection', $eventData);
     }
 }

@@ -40,13 +40,16 @@ class EventsRepository
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      *
      * @return EventsCollection
      */
-    public function getEventById(EventId $eventId)
+    public function getEventById($eventId)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId());
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId()
+        );
 
         $data = $this->client
             ->send($baseUrl->getURL());
@@ -55,66 +58,86 @@ class EventsRepository
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      * @param EventQuery $eventQuery
      *
      * @return EventsCollection
      */
-    public function getCharactersFromEvent(EventId $eventId, EventQuery $eventQuery)
+    public function getCharactersFromEvent($eventId, EventQuery $eventQuery)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId(), 'characters');
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId(),
+            'characters'
+        );
 
         return $this->getEventsCollection($baseUrl, $eventQuery);
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      * @param EventQuery $eventQuery
      *
      * @return EventsCollection
      */
-    public function getComicsFromEvent(EventId $eventId, EventQuery $eventQuery)
+    public function getComicsFromEvent($eventId, EventQuery $eventQuery)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId(), 'comics');
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId(),
+            'comics'
+        );
 
         return $this->getEventsCollection($baseUrl, $eventQuery);
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      * @param EventQuery $eventQuery
      *
      * @return EventsCollection
      */
-    public function getCreatorsFromCreator(EventId $eventId, EventQuery $eventQuery)
+    public function getCreatorsFromCreator($eventId, EventQuery $eventQuery)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId(), 'creators');
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId(),
+            'creators'
+        );
 
         return $this->getEventsCollection($baseUrl, $eventQuery);
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      * @param EventQuery $eventQuery
      *
      * @return EventsCollection
      */
-    public function getSeriesFromCreator(EventId $eventId, EventQuery $eventQuery)
+    public function getSeriesFromCreator($eventId, EventQuery $eventQuery)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId(), 'series');
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId(),
+            'series'
+        );
 
         return $this->getEventsCollection($baseUrl, $eventQuery);
     }
 
     /**
-     * @param EventId $eventId
+     * @param int $eventId
      * @param EventQuery $eventQuery
      *
      * @return EventsCollection
      */
-    public function getStoriesFromCreator(EventId $eventId, EventQuery $eventQuery)
+    public function getStoriesFromCreator($eventId, EventQuery $eventQuery)
     {
-        $baseUrl = BaseURL::create('events', $eventId->getEventId(), 'stories');
+        $baseUrl = BaseURL::create(
+            'events',
+            EventId::create($eventId)->getEventId(),
+            'stories'
+        );
 
         return $this->getEventsCollection($baseUrl, $eventQuery);
     }

@@ -40,13 +40,16 @@ class SeriesRepository
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      *
      * @return SeriesCollection
      */
-    public function getSerieById(SerieId $serieId)
+    public function getSerieById($serieId)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId());
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId()
+        );
 
         $data = $this->client
             ->send($baseUrl->getURL());
@@ -55,66 +58,86 @@ class SeriesRepository
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      * @param SerieQuery $serieQuery
      *
      * @return SeriesCollection
      */
-    public function getCharactersFromEvent(SerieId $serieId, SerieQuery $serieQuery)
+    public function getCharactersFromEvent($serieId, SerieQuery $serieQuery)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'characters');
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId(),
+            'characters'
+        );
 
         return $this->getSeriesCollection($baseUrl, $serieQuery);
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      * @param SerieQuery $serieQuery
      *
      * @return SeriesCollection
      */
-    public function getComicsFromEvent(SerieId $serieId, SerieQuery $serieQuery)
+    public function getComicsFromEvent($serieId, SerieQuery $serieQuery)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'comics');
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId(),
+            'comics'
+        );
 
         return $this->getSeriesCollection($baseUrl, $serieQuery);
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      * @param SerieQuery $serieQuery
      *
      * @return SeriesCollection
      */
-    public function getCreatorsFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    public function getCreatorsFromCreator($serieId, SerieQuery $serieQuery)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'creators');
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId(),
+            'creators'
+        );
 
         return $this->getSeriesCollection($baseUrl, $serieQuery);
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      * @param SerieQuery $serieQuery
      *
      * @return SeriesCollection
      */
-    public function getEventsFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    public function getEventsFromCreator($serieId, SerieQuery $serieQuery)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'events');
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId(),
+            'events'
+        );
 
         return $this->getSeriesCollection($baseUrl, $serieQuery);
     }
 
     /**
-     * @param SerieId $serieId
+     * @param int $serieId
      * @param SerieQuery $serieQuery
      *
      * @return SeriesCollection
      */
-    public function getStoriesFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    public function getStoriesFromCreator($serieId, SerieQuery $serieQuery)
     {
-        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'stories');
+        $baseUrl = BaseURL::create(
+            'series',
+            SerieId::create($serieId)->getSerieId(),
+            'stories'
+        );
 
         return $this->getSeriesCollection($baseUrl, $serieQuery);
     }

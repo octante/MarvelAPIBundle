@@ -70,15 +70,13 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCreator.json');
 
-        $creatorId = CreatorId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new CreatorsRepository($this->client);
-        $creatorData = $sut->getCreatorById($creatorId);
+        $creatorData = $sut->getCreatorById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection', $creatorData);
     }
 }

@@ -40,13 +40,16 @@ class StoryRepository
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      *
      * @return StoriesCollection
      */
-    public function getStoryById(StoryId $storyId)
+    public function getStoryById($storyId)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId());
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId()
+        );
 
         $data = $this->client
             ->send($baseUrl->getURL());
@@ -55,66 +58,86 @@ class StoryRepository
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      * @param StoryQuery $storyQuery
      *
      * @return StoriesCollection
      */
-    public function getCharactersFromStory(StoryId $storyId, StoryQuery $storyQuery)
+    public function getCharactersFromStory($storyId, StoryQuery $storyQuery)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId(), 'characters');
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId(),
+            'characters'
+        );
 
         return $this->getStoriesCollection($baseUrl, $storyQuery);
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      * @param StoryQuery $storyQuery
      *
      * @return StoriesCollection
      */
-    public function getComicsFromStory(StoryId $storyId, StoryQuery $storyQuery)
+    public function getComicsFromStory($storyId, StoryQuery $storyQuery)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId(), 'comics');
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId(),
+            'comics'
+        );
 
         return $this->getStoriesCollection($baseUrl, $storyQuery);
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      * @param StoryQuery $storyQuery
      *
      * @return StoriesCollection
      */
-    public function getCreatorsFromCreator(StoryId $storyId, StoryQuery $storyQuery)
+    public function getCreatorsFromCreator($storyId, StoryQuery $storyQuery)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId(), 'creators');
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId(),
+            'creators'
+        );
 
         return $this->getStoriesCollection($baseUrl, $storyQuery);
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      * @param StoryQuery $storyQuery
      *
      * @return StoriesCollection
      */
-    public function getEventsFromCreator(StoryId $storyId, StoryQuery $storyQuery)
+    public function getEventsFromCreator($storyId, StoryQuery $storyQuery)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId(), 'events');
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId(),
+            'events'
+        );
 
         return $this->getStoriesCollection($baseUrl, $storyQuery);
     }
 
     /**
-     * @param StoryId $storyId
+     * @param int $storyId
      * @param StoryQuery $storyQuery
      *
      * @return StoriesCollection
      */
-    public function getSeriesFromCreator(StoryId $storyId, StoryQuery $storyQuery)
+    public function getSeriesFromCreator($storyId, StoryQuery $storyQuery)
     {
-        $baseUrl = BaseURL::create('stories', $storyId->getStoryId(), 'series');
+        $baseUrl = BaseURL::create(
+            'stories',
+            StoryId::create($storyId)->getStoryId(),
+            'series'
+        );
 
         return $this->getStoriesCollection($baseUrl, $storyQuery);
     }

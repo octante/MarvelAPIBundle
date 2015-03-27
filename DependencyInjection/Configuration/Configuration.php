@@ -20,7 +20,6 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
  *
  * @author Issel Guberna <issel.guberna@gmail.com>
  *
- * @todo Needs to modify this file
  */
 class Configuration implements ConfigurationInterface
 {
@@ -46,7 +45,7 @@ class Configuration implements ConfigurationInterface
                 ->arrayNode('class')
                     ->addDefaultsIfNotSet()
                     ->children()
-                        ->scalarNode('client')->defaultValue('Predis\Client')->end()
+                        ->scalarNode('token')->defaultValue('Predis\Client')->end()
                         ->scalarNode('client_options')->defaultValue('Predis\Option\ClientOptions')->end()
                         ->scalarNode('connection_parameters')->defaultValue('Predis\Connection\ConnectionParameters')->end()
                         ->scalarNode('connection_factory')->defaultValue('Octante\MarvelAPIBundle\Client\Predis\Connection\ConnectionFactory')->end()

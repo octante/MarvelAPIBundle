@@ -70,15 +70,13 @@ class SerieRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSerie.json');
 
-        $serieId = SerieId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new SeriesRepository($this->client);
-        $seriesData = $sut->getSerieById($serieId);
+        $seriesData = $sut->getSerieById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\SeriesCollection', $seriesData);
     }
 }

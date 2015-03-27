@@ -70,15 +70,13 @@ class ComicsRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComic.json');
 
-        $comicId = ComicId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new ComicsRepository($this->client);
-        $comicData = $sut->getComicById($comicId);
+        $comicData = $sut->getComicById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\ComicsCollection', $comicData);
     }
 }

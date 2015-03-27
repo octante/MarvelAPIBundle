@@ -70,15 +70,13 @@ class StoryRepositoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getStory.json');
 
-        $storyId = StoryId::create(1011334);
-
         $this->client
             ->expects($this->once())
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
         $sut = new StoryRepository($this->client);
-        $storiesData = $sut->getStoryById($storyId);
+        $storiesData = $sut->getStoryById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\StoriesCollection', $storiesData);
     }
 }
