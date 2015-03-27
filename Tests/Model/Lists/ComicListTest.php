@@ -9,26 +9,26 @@
 namespace Lists;
 
 
-use Octante\MarvelAPIBundle\Model\Lists\SerieList;
-use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
+use Octante\MarvelAPIBundle\Model\Lists\ComicList;
+use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
 
-class SerieListTest extends \PHPUnit_Framework_TestCase
+class ComicListTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * when: createdIsCalled
      * with: validParameters
-     * should: returnSerieListInstance
+     * should: returnCharacterListInstance
      */
-    function test_createdIsCalled_validParameters_returnSerieListInstance()
+    function test_createdIsCalled_validParameters_returnCharacterListInstance()
     {
-        $sut = SerieList::create(
+        $sut = ComicList::create(
             1,
             2,
             'collection uri',
             array()
         );
 
-        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Lists\SerieList', $sut);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Lists\ComicList', $sut);
     }
 
     /**
@@ -38,7 +38,7 @@ class SerieListTest extends \PHPUnit_Framework_TestCase
      */
     function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
-        $sut = SerieList::create(
+        $sut = ComicList::create(
             1,
             2,
             'collection_uri',
@@ -57,7 +57,7 @@ class SerieListTest extends \PHPUnit_Framework_TestCase
      */
     function test_createIsCalled_notEmptyItems_returnCharactersSummary()
     {
-        $seriesSummary = array(
+        $comicsSummary = array(
             array(
                 'resourceURI' => 'resource_uri_1',
                 'name' => 'name_1'
@@ -68,16 +68,16 @@ class SerieListTest extends \PHPUnit_Framework_TestCase
             )
         );
 
-        $sut = SerieList::create(
+        $sut = ComicList::create(
             1,
             2,
             'collection_uri',
-            $seriesSummary
+            $comicsSummary
         );
 
         $expected = array(
-            SerieSummary::create('resource_uri_1', 'name_1'),
-            SerieSummary::create('resource_uri_2', 'name_2')
+            ComicSummary::create('resource_uri_1', 'name_1'),
+            ComicSummary::create('resource_uri_2', 'name_2')
         );
 
         $res = $sut->getItems();

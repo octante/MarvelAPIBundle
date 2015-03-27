@@ -9,7 +9,7 @@
 namespace Octante\MarvelAPIBundle\Model\Summaries;
 
 
-class SeriesSummary
+class SerieSummary
 {
     /**
      * @var string
@@ -39,7 +39,7 @@ class SeriesSummary
      */
     public static function create($resourceURI,$name)
     {
-        return new SeriesSummary($resourceURI,$name);
+        return new SerieSummary($resourceURI,$name);
     }
 
     /**

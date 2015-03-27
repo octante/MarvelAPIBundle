@@ -18,7 +18,7 @@ class EventSummaryTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: EventSummaryIsReturned
      */
-    function test_createIsCalled_validParameters_SeriesSummaryIsReturned()
+    function test_createIsCalled_validParameters_SerieSummaryIsReturned()
     {
         $sut = EventSummary::create('resource_uri', 'name');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\EventSummary', $sut);

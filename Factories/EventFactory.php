@@ -54,6 +54,9 @@ class EventFactory extends AbstractFactory
         if (!empty($eventData['events'])) {
             $event->setEvents($this->createEventsList($eventData));
         }
+        if (!empty($eventData['creators'])) {
+            $event->setCreators($this->createCreatorsList($eventData));
+        }
         if (!empty($eventData['characters'])) {
             $event->setCharacters($this->createCharactersList($eventData));
         }

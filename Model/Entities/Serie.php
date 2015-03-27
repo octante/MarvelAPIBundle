@@ -14,7 +14,7 @@ use Octante\MarvelAPIBundle\Model\Lists\ComicList;
 use Octante\MarvelAPIBundle\Model\Lists\CreatorList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
 use Octante\MarvelAPIBundle\Model\Lists\StoryList;
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
 
@@ -128,14 +128,14 @@ class Serie
     /**
      * A summary representation of the series which follows this series.
      *
-     * @var SeriesSummary
+     * @var SerieSummary
      */
     private $next;
 
     /**
      * A summary representation of the series which preceded this series.
      * 
-     * @var SeriesSummary
+     * @var SerieSummary
      */
     private $previous;
 
@@ -286,7 +286,7 @@ class Serie
     }
 
     /**
-     * @param SeriesSummary $next
+     * @param SerieSummary $next
      */
     public function setNext($next)
     {
@@ -294,7 +294,7 @@ class Serie
     }
 
     /**
-     * @return SeriesSummary
+     * @return SerieSummary
      */
     public function getNext()
     {
@@ -302,7 +302,7 @@ class Serie
     }
 
     /**
-     * @param SeriesSummary $previous
+     * @param SerieSummary $previous
      */
     public function setPrevious($previous)
     {
@@ -310,7 +310,7 @@ class Serie
     }
 
     /**
-     * @return SeriesSummary
+     * @return SerieSummary
      */
     public function getPrevious()
     {

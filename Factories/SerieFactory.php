@@ -9,7 +9,7 @@
 namespace Octante\MarvelAPIBundle\Factories;
 
 use Octante\MarvelAPIBundle\Model\Entities\Serie;
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
@@ -67,14 +67,14 @@ class SerieFactory extends AbstractFactory
             $serie->setCreators($this->createCreatorsList($serieData));
         }
         if (isset($serieData['next'])) {
-            $seriesSummary = SeriesSummary::create(
+            $seriesSummary = SerieSummary::create(
                 $serieData['next']['resourceURI'],
                 $serieData['next']['name']
             );
             $serie->setNext($seriesSummary);
         }
         if (isset($serieData['previous'])) {
-            $seriesSummary = SeriesSummary::create(
+            $seriesSummary = SerieSummary::create(
                 $serieData['previous']['resourceURI'],
                 $serieData['previous']['name']
             );

@@ -9,7 +9,7 @@
 namespace Octante\MarvelAPIBundle\Model\Lists;
 
 
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 
 class SerieList
 {
@@ -29,7 +29,7 @@ class SerieList
     private $collectionURI;
 
     /**
-     * Array of SeriesSummary
+     * Array of SerieSummary
      *
      * @var array
      */
@@ -84,7 +84,7 @@ class SerieList
     {
         $seriesSummaries = array();
         foreach ($items as $item) {
-            $seriesSummaries[] = SeriesSummary::create(
+            $seriesSummaries[] = SerieSummary::create(
                 $item['resourceURI'],
                 $item['name']
             );

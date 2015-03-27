@@ -31,7 +31,7 @@ class CreatorId
      *
      * @throws InvalidCreatorIdException
      *
-     * @return \Octante\MarvelAPIBundle\ValueObjects\CreatorId
+     * @return \Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId
      */
     public static function create($creatorId)
     {

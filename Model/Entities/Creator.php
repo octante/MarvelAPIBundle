@@ -12,7 +12,7 @@ namespace Octante\MarvelAPIBundle\Model\Entities;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
 use Octante\MarvelAPIBundle\Model\Lists\StoryList;
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 
@@ -112,7 +112,7 @@ class Creator
     /**
      * A summary representation of the series to which this comic belongs.,
      *
-     * @var SeriesSummary
+     * @var SerieSummary
      */
     private $series;
 
@@ -281,7 +281,7 @@ class Creator
     }
 
     /**
-     * @param SeriesSummary $series
+     * @param SerieSummary $series
      */
     public function setSeries($series)
     {
@@ -289,7 +289,7 @@ class Creator
     }
 
     /**
-     * @return SeriesSummary
+     * @return SerieSummary
      */
     public function getSeries()
     {

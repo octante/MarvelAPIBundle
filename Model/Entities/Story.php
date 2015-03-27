@@ -11,16 +11,12 @@ namespace Octante\MarvelAPIBundle\Model\Entities;
 
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
-use Octante\MarvelAPIBundle\Model\Lists\CreatorList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
-use Octante\MarvelAPIBundle\Model\Lists\StoryList;
-use Octante\MarvelAPIBundle\Model\Summaries\EventSummary;
 use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
-use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
-use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
+use Octante\MarvelAPIBundle\Model\ValueObjects\StoryId;
 
-class Event
+class Story
 {
     /**
      * The unique ID of the comic resource.,
@@ -30,7 +26,7 @@ class Event
     private $id;
 
     /**
-     * The title of the event
+     * The story title.
      *
      * @var string
      */
@@ -46,9 +42,16 @@ class Event
     /**
      * The date the resource was most recently modified.,
      *
-     * @var \DateTime
+     * @var string
      */
     private $modified;
+
+    /**
+     * The story type e.g. interior story, cover, text story.
+     *
+     * @var string
+     */
+    private $type;
 
     /**
      * The canonical URL identifier for this resource.,
@@ -58,30 +61,9 @@ class Event
     private $resourceURI;
 
     /**
-     * A set of public web site URLs for the resource.,
-     *
-     * @var array
-     */
-    private $urls;
-
-    /**
-     * The date of publication of the first issue in this event.,
-     *
-     * @var string
-     */
-    private $start;
-
-    /**
-     * The date of publication of the last issue in this event.,
-     *
-     * @var string
-     */
-    private $end;
-
-    /**
      * The representative image for this comic.,
      *
-     * @var Thumbnail
+     * @var Image
      */
     private $thumbnail;
 
@@ -93,11 +75,11 @@ class Event
     private $comics;
 
     /**
-     * A resource list containing the stories which appear in this comic.,
+     * A resource list of characters which appear in this story.
      *
-     * @var StoryList
+     * @var CharacterList
      */
-    private $stories;
+    private $characters;
 
     /**
      * A resource list containing the events in which this comic appears.
@@ -107,20 +89,6 @@ class Event
     private $events;
 
     /**
-     * A resource list containing the characters which appear in this event.
-     *
-     * @var CharacterList
-     */
-    private $characters;
-
-    /**
-     * A resource list containing creators whose work appears in this event.
-     *
-     * @var CreatorList
-     */
-    private $creators;
-
-    /**
      * A summary representation of the series to which this comic belongs.,
      *
      * @var SerieSummary
@@ -128,35 +96,35 @@ class Event
     private $series;
 
     /**
-     * A summary representation of the event which follows this event.
+     * A resource list of creators who worked on this story.
      *
-     * @var EventSummary
+     * @var array
      */
-    private $next;
+    private $creators;
 
     /**
-     * A summary representation of the event which preceded this event
-     * 
-     * @var EventSummary
+     * A summary representation of the issue in which this story was originally published.
+     *
+     * @var array
      */
-    private $previous;
+    private $originalIssue;
 
     /**
-     * @param $eventId
+     * @param $storyId
      */
-    private function __construct(EventId $eventId)
+    private function __construct(StoryId $storyId)
     {
-        $this->id = $eventId;
+        $this->id = $storyId;
     }
 
     /**
-     * @param EventId $eventId
+     * @param StoryId $storyId
      *
-     * @return Event
+     * @return Story
      */
-    public static function create(EventId $eventId)
+    public static function create(StoryId $storyId)
     {
-        return new Event($eventId);
+        return new Story($storyId);
     }
 
     /**
@@ -192,22 +160,6 @@ class Event
     }
 
     /**
-     * @param CreatorList $creators
-     */
-    public function setCreators($creators)
-    {
-        $this->creators = $creators;
-    }
-
-    /**
-     * @return CreatorList
-     */
-    public function getCreators()
-    {
-        return $this->creators;
-    }
-
-    /**
      * @param string $description
      */
     public function setDescription($description)
@@ -221,22 +173,6 @@ class Event
     public function getDescription()
     {
         return $this->description;
-    }
-
-    /**
-     * @param string $end
-     */
-    public function setEnd($end)
-    {
-        $this->end = $end;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEnd()
-    {
-        return $this->end;
     }
 
     /**
@@ -272,7 +208,7 @@ class Event
     }
 
     /**
-     * @param \DateTime $modified
+     * @param string $modified
      */
     public function setModified($modified)
     {
@@ -280,43 +216,11 @@ class Event
     }
 
     /**
-     * @return \DateTime
+     * @return string
      */
     public function getModified()
     {
         return $this->modified;
-    }
-
-    /**
-     * @param EventSummary $next
-     */
-    public function setNext($next)
-    {
-        $this->next = $next;
-    }
-
-    /**
-     * @return EventSummary
-     */
-    public function getNext()
-    {
-        return $this->next;
-    }
-
-    /**
-     * @param EventSummary $previous
-     */
-    public function setPrevious($previous)
-    {
-        $this->previous = $previous;
-    }
-
-    /**
-     * @return EventSummary
-     */
-    public function getPrevious()
-    {
-        return $this->previous;
     }
 
     /**
@@ -352,38 +256,6 @@ class Event
     }
 
     /**
-     * @param string $start
-     */
-    public function setStart($start)
-    {
-        $this->start = $start;
-    }
-
-    /**
-     * @return string
-     */
-    public function getStart()
-    {
-        return $this->start;
-    }
-
-    /**
-     * @param StoryList $stories
-     */
-    public function setStories($stories)
-    {
-        $this->stories = $stories;
-    }
-
-    /**
-     * @return StoryList
-     */
-    public function getStories()
-    {
-        return $this->stories;
-    }
-
-    /**
      * @param Image $thumbnail
      */
     public function setThumbnail($thumbnail)
@@ -416,18 +288,50 @@ class Event
     }
 
     /**
-     * @param array $urls
+     * @param string $type
      */
-    public function setUrls($urls)
+    public function setType($type)
     {
-        $this->urls = $urls;
+        $this->type = $type;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param array $creators
+     */
+    public function setCreators($creators)
+    {
+        $this->creators = $creators;
     }
 
     /**
      * @return array
      */
-    public function getUrls()
+    public function getCreators()
     {
-        return $this->urls;
+        return $this->creators;
+    }
+
+    /**
+     * @param array $originalIssue
+     */
+    public function setOriginalIssue($originalIssue)
+    {
+        $this->originalIssue = $originalIssue;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOriginalIssue()
+    {
+        return $this->originalIssue;
     }
 } 

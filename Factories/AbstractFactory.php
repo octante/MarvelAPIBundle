@@ -15,6 +15,7 @@ use Octante\MarvelAPIBundle\Model\Lists\CreatorList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
 use Octante\MarvelAPIBundle\Model\Lists\SerieList;
 use Octante\MarvelAPIBundle\Model\Lists\StoryList;
+use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
 
 class AbstractFactory
@@ -119,6 +120,19 @@ class AbstractFactory
             $data['characters']['returned'],
             $data['characters']['collectionURI'],
             $data['characters']['items']
+        );
+    }
+
+    /**
+     * @param $data
+     *
+     * @return ComicSummary
+     */
+    protected function createComicSummary($data)
+    {
+        return ComicSummary::create(
+            $data['originalIssue']['resourceURI'],
+            $data['originalIssue']['name']
         );
     }
 } 

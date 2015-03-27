@@ -35,7 +35,7 @@ class ComicSummary
      * @param $resourceURI
      * @param $name
      *
-     * @return SerieSummary
+     * @return ComicSummary
      */
     public static function create($resourceURI, $name)
     {

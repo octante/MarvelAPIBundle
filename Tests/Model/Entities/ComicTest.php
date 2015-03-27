@@ -15,7 +15,7 @@ use Octante\MarvelAPIBundle\Model\Lists\CreatorList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
 use Octante\MarvelAPIBundle\Model\Lists\StoryList;
 use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Price;
@@ -69,7 +69,7 @@ class ComicTest extends \PHPUnit_Framework_TestCase
     {
         $sut = $this->getSUT();
         $series = $sut->getSeries();
-        $expected = SeriesSummary::create(
+        $expected = SerieSummary::create(
             'http://gateway.marvel.com/v1/public/series/15481',
             'Ant-Man: So (2011 - Present)'
         );

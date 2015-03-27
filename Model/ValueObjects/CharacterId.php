@@ -31,7 +31,7 @@ class CharacterId
      *
      * @throws \Octante\MarvelAPIBundle\Exceptions\InvalidCharacterIdException
      *
-     * @return \Octante\MarvelAPIBundle\ValueObjects\CharacterId
+     * @return \Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId
      */
     public static function create($characterId)
     {

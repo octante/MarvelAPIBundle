@@ -9,19 +9,19 @@
 namespace Summaries;
 
 
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 
-class SeriesSummaryTest extends \PHPUnit_Framework_TestCase
+class SerieSummaryTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * when: createIsCalled
      * with: validParameters
-     * should: SeriesSummaryIsReturned
+     * should: SerieSummaryIsReturned
      */
-    function test_createIsCalled_validParameters_SeriesSummaryIsReturned()
+    function test_createIsCalled_validParameters_SerieSummaryIsReturned()
     {
-        $sut = SeriesSummary::create('resource_uri', 'name');
-        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary', $sut);
+        $sut = SerieSummary::create('resource_uri', 'name');
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\SerieSummary', $sut);
     }
 
     /**
@@ -31,7 +31,7 @@ class SeriesSummaryTest extends \PHPUnit_Framework_TestCase
      */
     function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
-        $sut = SeriesSummary::create('resource_uri', 'name');
+        $sut = SerieSummary::create('resource_uri', 'name');
         $this->assertEquals('resource_uri', $sut->getResourceURI());
         $this->assertEquals('name', $sut->getName());
     }

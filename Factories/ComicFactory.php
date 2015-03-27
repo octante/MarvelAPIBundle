@@ -10,7 +10,7 @@ namespace Octante\MarvelAPIBundle\Factories;
 
 use Octante\MarvelAPIBundle\Model\Entities\Comic;
 use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
-use Octante\MarvelAPIBundle\Model\Summaries\SeriesSummary;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate;
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
@@ -115,11 +115,11 @@ class ComicFactory extends AbstractFactory
     /**
      * @param $comicData
      *
-     * @return SeriesSummary
+     * @return SerieSummary
      */
     protected function getSeries($comicData)
     {
-        return SeriesSummary::create($comicData['resourceURI'], $comicData['name']);
+        return SerieSummary::create($comicData['resourceURI'], $comicData['name']);
     }
 
     /**

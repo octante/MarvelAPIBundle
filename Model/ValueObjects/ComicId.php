@@ -31,7 +31,7 @@ class ComicId
      *
      * @throws \Octante\MarvelAPIBundle\Exceptions\InvalidComicIdException
      *
-     * @return \Octante\MarvelAPIBundle\ValueObjects\ComicId
+     * @return \Octante\MarvelAPIBundle\Model\ValueObjects\ComicId
      */
     public static function create($comicId)
     {

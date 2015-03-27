@@ -31,7 +31,7 @@ class EventId
      *
      * @throws \Octante\MarvelAPIBundle\Exceptions\InvalidEventIdException
      *
-     * @return \Octante\MarvelAPIBundle\ValueObjects\CharacterId
+     * @return \Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId
      */
     public static function create($eventId)
     {
