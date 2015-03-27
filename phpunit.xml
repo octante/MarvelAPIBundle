@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<phpunit colors="true" processIsolation="false" stopOnFailure="false" bootstrap="./Tests/autoload.php">
-    <testsuites>
-        <testsuite name="MarvelAPIBundle Test Suite">
-            <directory>./Tests</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>
