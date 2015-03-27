@@ -10,7 +10,9 @@ namespace Octante\MarvelAPIBundle\Repositories;
 
 use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
+use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\SerieQuery;
+use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 
 class SeriesRepository
 {
@@ -38,10 +40,96 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param SerieId $serieId
+     *
+     * @return SeriesCollection
      */
-    public function getSerieById($serieId)
+    public function getSerieById(SerieId $serieId)
     {
-        // TO IMPLEMENT
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId());
+
+        $data = $this->client
+            ->send($baseUrl->getURL());
+
+        return SeriesCollection::create(json_decode($data, true));
+    }
+
+    /**
+     * @param SerieId $serieId
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    public function getCharactersFromEvent(SerieId $serieId, SerieQuery $serieQuery)
+    {
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'characters');
+
+        return $this->getSeriesCollection($baseUrl, $serieQuery);
+    }
+
+    /**
+     * @param SerieId $serieId
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    public function getComicsFromEvent(SerieId $serieId, SerieQuery $serieQuery)
+    {
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'comics');
+
+        return $this->getSeriesCollection($baseUrl, $serieQuery);
+    }
+
+    /**
+     * @param SerieId $serieId
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    public function getCreatorsFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    {
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'creators');
+
+        return $this->getSeriesCollection($baseUrl, $serieQuery);
+    }
+
+    /**
+     * @param SerieId $serieId
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    public function getEventsFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    {
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'events');
+
+        return $this->getSeriesCollection($baseUrl, $serieQuery);
+    }
+
+    /**
+     * @param SerieId $serieId
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    public function getStoriesFromCreator(SerieId $serieId, SerieQuery $serieQuery)
+    {
+        $baseUrl = BaseURL::create('series', $serieId->getSerieId(), 'stories');
+
+        return $this->getSeriesCollection($baseUrl, $serieQuery);
+    }
+
+    /**
+     * @param BaseURL $baseUrl
+     * @param SerieQuery $serieQuery
+     *
+     * @return SeriesCollection
+     */
+    private function getSeriesCollection($baseUrl, $serieQuery)
+    {
+        $data = $this->client
+            ->send($baseUrl->getURL() . '?' . $serieQuery->getQuery());
+
+        return SeriesCollection::create(json_decode($data, true));
     }
 } 

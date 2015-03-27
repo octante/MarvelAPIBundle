@@ -15,6 +15,8 @@ class CharacterQuery extends Query
     const ORDER_BY_MINUS_NAME     = '-name';
     const ORDER_BY_MINUS_MODIFIED = '-modified';
 
+    const RESOURCE_COMICS         = 'comics';
+
     /**
      * @param string $name
      */
@@ -69,5 +71,10 @@ class CharacterQuery extends Query
     public function setStories($stories)
     {
         $this->filters['stories'] = $stories;
+    }
+
+    public function setResource($resource)
+    {
+
     }
 }

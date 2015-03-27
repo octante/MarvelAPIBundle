@@ -14,7 +14,7 @@ use Octante\MarvelAPIBundle\Exceptions\InvalidCreatorIdException;
 class CreatorId
 {
     /**
-     * @var
+     * @var int
      */
     private $creatorId;
 
@@ -43,9 +43,9 @@ class CreatorId
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getComicId()
+    public function getCreatorId()
     {
         return $this->creatorId;
     }

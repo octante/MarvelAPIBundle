@@ -9,6 +9,7 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
 use Octante\MarvelAPIBundle\Repositories\CreatorsRepository;
 
 class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -58,6 +59,27 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $sut = new CreatorsRepository($this->client);
         $sut->getCreators($this->queryMock);
+    }
+
+    /**
+     * when: getCreatorByIdIsCalled
+     * with: withACreatorId
+     * should: clientReturnCreatorCollection
+     */
+    function test_getCreatorByIdIsCalled_withACreatorId_clientReturnCreatorCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCreator.json');
+
+        $creatorId = CreatorId::create(1011334);
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CreatorsRepository($this->client);
+        $creatorData = $sut->getCreatorById($creatorId);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection', $creatorData);
     }
 }
  

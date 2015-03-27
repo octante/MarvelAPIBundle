@@ -9,8 +9,10 @@
 namespace Octante\MarvelAPIBundle\Repositories;
 
 use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
+use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\CharacterQuery;
 use Octante\MarvelAPIBundle\Lib\Client;
+use Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId;
 
 class CharactersRepository
 {
@@ -31,17 +33,91 @@ class CharactersRepository
      */
     public function getCharacters(CharacterQuery $query)
     {
+        $baseURL = BaseURL::create('characters');
         $data = $this->client
-                     ->send($query->getQuery());
+                     ->send($baseURL->getURL() . '?' . $query->getQuery());
 
         return CharactersCollection::create(json_decode($data, true));
     }
 
     /**
-     * @param int $characterId
+     * @param CharacterId $characterId
+     *
+     * @return CharactersCollection
      */
-    public function getCharacterById($characterId)
+    public function getCharacterById(CharacterId $characterId)
     {
-        // TO IMPLEMENT
+        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId());
+
+        $data = $this->client
+                     ->send($baseUrl->getURL());
+
+        return CharactersCollection::create(json_decode($data, true));
+    }
+
+    /**
+     * @param CharacterId $characterId
+     * @param CharacterQuery $characterQuery
+     *
+     * @return CharactersCollection
+     */
+    public function getComicsFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    {
+        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'comics');
+
+        return $this->getCharactersCollection($baseUrl, $characterQuery);
+    }
+
+    /**
+     * @param CharacterId $characterId
+     * @param CharacterQuery $characterQuery
+     *
+     * @return CharactersCollection
+     */
+    public function getEventsFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    {
+        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'events');
+
+        return $this->getCharactersCollection($baseUrl, $characterQuery);
+    }
+
+    /**
+     * @param CharacterId $characterId
+     * @param CharacterQuery $characterQuery
+     *
+     * @return CharactersCollection
+     */
+    public function getSeriesFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    {
+        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'series');
+
+        return $this->getCharactersCollection($baseUrl, $characterQuery);
+    }
+
+    /**
+     * @param CharacterId $characterId
+     * @param CharacterQuery $characterQuery
+     *
+     * @return CharactersCollection
+     */
+    public function getStoriesFromCharacter(CharacterId $characterId, CharacterQuery $characterQuery)
+    {
+        $baseUrl = BaseURL::create('characters', $characterId->getCharacterId(), 'stories');
+
+        return $this->getCharactersCollection($baseUrl, $characterQuery);
+    }
+
+    /**
+     * @param BaseURL $baseUrl
+     * @param CharacterQuery $characterQuery
+     *
+     * @return CharactersCollection
+     */
+    private function getCharactersCollection($baseUrl, $characterQuery)
+    {
+        $data = $this->client
+                     ->send($baseUrl->getURL() . '?' . $characterQuery->getQuery());
+
+        return CharactersCollection::create(json_decode($data, true));
     }
 } 

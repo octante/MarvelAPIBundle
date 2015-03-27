@@ -9,6 +9,7 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\ValueObjects\ComicId;
 use Octante\MarvelAPIBundle\Repositories\ComicsRepository;
 
 class ComicsRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -58,6 +59,27 @@ class ComicsRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $sut = new ComicsRepository($this->client);
         $sut->getComics($this->queryMock);
+    }
+
+    /**
+     * when: getComicByIdIsCalled
+     * with: withAComicId
+     * should: clientReturnComicCollection
+     */
+    function test_getComicByIdIsCalled_withAComicId_clientReturnComicCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComic.json');
+
+        $comicId = ComicId::create(1011334);
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new ComicsRepository($this->client);
+        $comicData = $sut->getComicById($comicId);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\ComicsCollection', $comicData);
     }
 }
  

@@ -9,6 +9,7 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId;
 use Octante\MarvelAPIBundle\Repositories\CharactersRepository;
 
 class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -59,5 +60,25 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
         $sut = new CharactersRepository($this->client);
         $sut->getCharacters($this->queryMock);
     }
+
+    /**
+     * when: getCharacterByIdIsCalled
+     * with: withACharacterId
+     * should: clientReturnCharacterCollection
+     */
+    function test_getCharacterByIdIsCalled_withACharacterId_clientReturnCharacterCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharacter.json');
+
+        $characterId = CharacterId::create(1011334);
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CharactersRepository($this->client);
+        $characterData = $sut->getCharacterById($characterId);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\CharactersCollection', $characterData);
+    }
 }
- 

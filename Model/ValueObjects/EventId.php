@@ -14,7 +14,7 @@ use Octante\MarvelAPIBundle\Exceptions\InvalidEventIdException;
 class EventId
 {
     /**
-     * @var
+     * @var int
      */
     private $eventId;
 
@@ -43,9 +43,9 @@ class EventId
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getCharacterId()
+    public function getEventId()
     {
         return $this->eventId;
     }

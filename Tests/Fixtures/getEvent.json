@@ -1,0 +1,104 @@
+{
+    "code": 200,
+    "status": "Ok",
+    "copyright": "© 2015 MARVEL",
+    "attributionText": "Data provided by Marvel. © 2015 MARVEL",
+    "attributionHTML": "<a href=\"http://marvel.com\">Data provided by Marvel. © 2015 MARVEL</a>",
+    "etag": "ed69e987ba68190594000f9490457d85c14a6326",
+    "data": {
+        "offset": 0,
+        "limit": 20,
+        "total": 1,
+        "count": 1,
+        "results": [
+            {
+                "id": 116,
+                "title": "Acts of Vengeance!",
+                "description": "Loki sets about convincing the super-villains of Earth to attack heroes other than those they normally fight in an attempt to destroy the Avengers to absolve his guilt over inadvertently creating the team in the first place.",
+                "resourceURI": "http://gateway.marvel.com/v1/public/events/116",
+                "urls": [
+                    {
+                        "type": "detail",
+                        "url": "http://marvel.com/comics/events/116/acts_of_vengeance?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    },
+                    {
+                        "type": "wiki",
+                        "url": "http://marvel.com/universe/Acts_of_Vengeance!?utm_campaign=apiRef&utm_source=3435d98575002479ebe4ca4e51d294da"
+                    }
+                ],
+                "modified": "2013-06-28T16:31:24-0400",
+                "start": "1989-12-10 00:00:00",
+                "end": "2008-01-04 00:00:00",
+                "thumbnail": {
+                    "path": "http://i.annihil.us/u/prod/marvel/i/mg/9/40/51ca10d996b8b",
+                    "extension": "jpg"
+                },
+                "creators": {
+                    "available": 115,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/events/116/creators",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/creators/2707",
+                            "name": "Jeff Albrecht",
+                            "role": "inker"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "characters": {
+                    "available": 67,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/events/116/characters",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/characters/1010370",
+                            "name": "Alpha Flight"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "stories": {
+                    "available": 145,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/events/116/stories",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/stories/12960",
+                            "name": "Cover #12960",
+                            "type": "cover"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "comics": {
+                    "available": 52,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/events/116/comics",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/comics/12744",
+                            "name": "Alpha Flight (1983) #79"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "series": {
+                    "available": 22,
+                    "collectionURI": "http://gateway.marvel.com/v1/public/events/116/series",
+                    "items": [
+                        {
+                            "resourceURI": "http://gateway.marvel.com/v1/public/series/2116",
+                            "name": "Alpha Flight (1983 - 1994)"
+                        }
+                    ],
+                    "returned": 20
+                },
+                "next": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/events/240",
+                    "name": "Days of Future Present"
+                },
+                "previous": {
+                    "resourceURI": "http://gateway.marvel.com/v1/public/events/233",
+                    "name": "Atlantis Attacks"
+                }
+            }
+        ]
+    }
+}

@@ -9,6 +9,7 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 use Octante\MarvelAPIBundle\Repositories\SeriesRepository;
 
 class SerieRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -58,6 +59,27 @@ class SerieRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $sut = new SeriesRepository($this->client);
         $sut->getSeries($this->queryMock);
+    }
+
+    /**
+     * when: getSeriesByIdIsCalled
+     * with: withASerieId
+     * should: clientReturnSeriesCollection
+     */
+    function test_getSeriesByIdIsCalled_withASerieId_clientReturnSeriesCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSerie.json');
+
+        $serieId = SerieId::create(1011334);
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new SeriesRepository($this->client);
+        $seriesData = $sut->getSerieById($serieId);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\SeriesCollection', $seriesData);
     }
 }
  

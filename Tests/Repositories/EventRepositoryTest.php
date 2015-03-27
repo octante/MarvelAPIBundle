@@ -9,6 +9,7 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
 use Octante\MarvelAPIBundle\Repositories\EventsRepository;
 
 class EventRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -58,6 +59,27 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
 
         $sut = new EventsRepository($this->client);
         $sut->getEvents($this->queryMock);
+    }
+
+    /**
+     * when: getEventByIdIsCalled
+     * with: withAnEventId
+     * should: clientReturnEventsCollection
+     */
+    function test_getEventByIdIsCalled_withAnEventId_clientReturnEventsCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEvent.json');
+
+        $eventId = EventId::create(1011334);
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new EventsRepository($this->client);
+        $eventData = $sut->getEventById($eventId);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\EventsCollection', $eventData);
     }
 }
  
