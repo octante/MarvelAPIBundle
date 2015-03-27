@@ -9,5 +9,8 @@ php:
 before_script:
    - composer install --no-interaction --dev
 
+install:
+  - composer require satooshi/php-coveralls:~0.6@stable
+
 script:
    - phpunit -c phpunit.xml.dist --coverage-text
