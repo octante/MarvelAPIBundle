@@ -21,7 +21,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Octante\MarvelAPIBundle\MarvelAPIBundle(),
+        new Octante\MarvelAPIBundle\OctanteMarvelAPIBundle(),
     );
 }
 ```
