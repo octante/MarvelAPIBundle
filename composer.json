@@ -1,10 +1,10 @@
 {
     "name": "octante/marvel-api-bundle",
-    "type": "symfony-bundle",
     "description": "Marvel API bundle for Symfony2",
     "keywords": ["marvel","api"],
     "homepage": "https://github.com/octante",
     "license": "MIT",
+    "type": "symfony-bundle",
     "authors": [
         {
             "name": "Issel Guberna",
@@ -16,7 +16,7 @@
         "symfony/framework-bundle": "2.*"
     },
     "autoload": {
-        "psr-0": {"Octante\\MarvelAPIBundle": ""}
+        "psr-4": {"Octante\\MarvelAPIBundle\\": ""}
     },
     "target-dir": "Octante/MarvelAPIBundle"
 }
