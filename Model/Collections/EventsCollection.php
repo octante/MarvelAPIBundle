@@ -40,6 +40,14 @@ class EventsCollection
     }
 
     /**
+     * @return EventDataContainer
+     */
+    public function getData()
+    {
+        return $this->eventsDataWrapper->getData();
+    }
+
+    /**
      * @return DataWrapper
      */
     public function getEventsDataWrapper()

@@ -40,6 +40,14 @@ class CharactersCollection
     }
 
     /**
+     * @return CharacterDataContainer
+     */
+    public function getData()
+    {
+        return $this->characterDataWrapper->getData();
+    }
+
+    /**
      * @return DataWrapper
      */
     public function getCharactersDataWrapper()

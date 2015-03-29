@@ -40,6 +40,14 @@ class SeriesCollection
     }
 
     /**
+     * @return SerieDataContainer
+     */
+    public function getData()
+    {
+        return $this->seriesDataWrapper->getData();
+    }
+
+    /**
      * @return DataWrapper
      */
     public function getSeriesDataWrapper()

@@ -40,11 +40,11 @@ class StoriesCollection
     }
 
     /**
-     * @return DataWrapper
+     * @return StoryDataContainer
      */
-    public function getStoriesDataWrapper()
+    public function getData()
     {
-        return $this->storyDataWrapper;
+        return $this->storyDataWrapper->getData();
     }
 
     /**

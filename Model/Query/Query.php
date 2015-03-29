@@ -61,11 +61,13 @@ class Query
     public function getQuery()
     {
         $url = '';
-        foreach ($this->filters as $field => $value) {
-            $url .= $field . '=' . $value . '&';
+        if (!empty($this->filters)) {
+            foreach ($this->filters as $field => $value) {
+                $url .= $field . '=' . $value . '&';
+            }
+            // Clear last ampersand if necessary
+            $url = trim($url, '&');
         }
-        // Clear last ampersand if necessary
-        $url = trim($url, '&');
 
         if ($this->orderBy !== null) {
             $url .= '&orderBy=' . $this->orderBy;

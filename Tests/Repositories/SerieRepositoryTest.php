@@ -9,7 +9,6 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
-use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 use Octante\MarvelAPIBundle\Repositories\SeriesRepository;
 
 class SerieRepositoryTest extends \PHPUnit_Framework_TestCase
@@ -19,7 +18,9 @@ class SerieRepositoryTest extends \PHPUnit_Framework_TestCase
 
     public function setUp()
     {
-        $this->client = $this->getMock('Octante\MarvelAPIBundle\Lib\Client');
+        $this->client = $this->getMockBuilder('Octante\MarvelAPIBundle\Lib\Client')
+            ->disableOriginalConstructor()
+            ->getMock();
         $this->queryMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Model\Query\SerieQuery')
             ->disableOriginalConstructor()
             ->getMock();

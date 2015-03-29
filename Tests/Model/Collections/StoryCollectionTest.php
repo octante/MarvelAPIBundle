@@ -6,6 +6,7 @@
  * Time: 12:41
  */
 
+use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 
 class EventsCollectionTest extends PHPUnit_Framework_TestCase
@@ -19,8 +20,8 @@ class EventsCollectionTest extends PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents (__DIR__ . '/../../Fixtures/getStoriesCollection.json');
 
-        $sut = StoriesCollection::create(json_decode($jsonResponse, true));
-        $result = $sut->getStoriesDataWrapper();
+        $sut = EventsCollection::create(json_decode($jsonResponse, true));
+        $result = $sut->getEventsDataWrapper();
 
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\ValueObjects\DataWrapper', $result);
 

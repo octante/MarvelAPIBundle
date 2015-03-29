@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="octante_marvel.comics_query.class">Octante\MarvelAPIBundle\Model\Query\ComicQuery</parameter>
+        <parameter key="octante_marvel.comics.class">Octante\MarvelAPIBundle\Repositories\ComicsRepository</parameter>
+        <parameter key="octante_marvel.client.class">Octante\MarvelAPIBundle\Lib\Client</parameter>
+        <parameter key="octante_marvel.authentication.class">Octante\MarvelAPIBundle\Lib\Authentication</parameter>
+    </parameters>
+
+    <services>
+
+        <service id="marvel.authentication" class="%octante_marvel.authentication.class%">
+            <argument>%marvel_private_key%</argument>
+            <argument>%marvel_public_key%</argument>
+        </service>
+        <service id="marvel.client" class="%octante_marvel.client.class%">
+            <argument type="service" id="marvel.authentication"/>
+        </service>
+        <service id="marvel.comics_query" class="%octante_marvel.comics_query.class%">
+        </service>
+        <service id="marvel.comics" class="%octante_marvel.comics.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+    </services>
+
+</container>

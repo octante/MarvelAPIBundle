@@ -33,8 +33,10 @@ class ComicsRepository
      */
     public function getComics(ComicQuery $query)
     {
+        $baseUrl = BaseURL::create('comics');
+
         $data = $this->client
-                     ->send($query->getQuery());
+                     ->send($baseUrl->getURL() . '?' . $query->getQuery());
 
         return ComicsCollection::create(json_decode($data, true));
     }

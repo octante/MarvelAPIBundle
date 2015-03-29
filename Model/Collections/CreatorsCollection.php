@@ -40,6 +40,14 @@ class CreatorsCollection
     }
 
     /**
+     * @return CreatorDataContainer
+     */
+    public function getData()
+    {
+        return $this->creatorsDataWrapper->getData();
+    }
+
+    /**
      * @return DataWrapper
      */
     public function getCreatorsDataWrapper()

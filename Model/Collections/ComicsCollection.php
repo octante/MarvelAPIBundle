@@ -34,9 +34,10 @@ class ComicsCollection
      */
     public static function create($data)
     {
-        return new ComicsCollection(
-            self::parseDataWrapper($data)
-        );
+        return (new ComicsCollection(
+                    self::parseDataWrapper($data)
+                )
+            );
     }
 
     /**
@@ -45,6 +46,14 @@ class ComicsCollection
     public function getComicsDataWrapper()
     {
         return $this->comicDataWrapper;
+    }
+
+    /**
+     * @return ComicDataContainer
+     */
+    public function getData()
+    {
+        return $this->comicDataWrapper->getData();
     }
 
     /**

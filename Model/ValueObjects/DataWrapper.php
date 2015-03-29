@@ -109,7 +109,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAttributionHTML()
     {
@@ -117,7 +117,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getAttributionText()
     {
@@ -125,7 +125,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return int
      */
     public function getCode()
     {
@@ -133,7 +133,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getCopyright()
     {
@@ -141,7 +141,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return DataContainer
      */
     public function getData()
     {
@@ -149,7 +149,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getEtag()
     {
@@ -157,7 +157,7 @@ class DataWrapper
     }
 
     /**
-     * @return mixed
+     * @return string
      */
     public function getStatus()
     {

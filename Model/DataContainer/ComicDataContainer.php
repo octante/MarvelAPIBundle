@@ -23,8 +23,10 @@ class ComicDataContainer extends DataContainer
         $comics = array();
         // @todo createComic must be static method from ComicFactory
         $comicFactory = new ComicFactory();
-        foreach ($results as $result) {
-            $comics[] = $comicFactory->createComic($result);
+        if (is_array($results)) {
+            foreach ($results as $result) {
+                $comics[] = $comicFactory->createComic($result);
+            }
         }
         return $comics;
     }
