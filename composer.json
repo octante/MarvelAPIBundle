@@ -17,6 +17,5 @@
     },
     "autoload": {
         "psr-4": {"Octante\\MarvelAPIBundle\\": ""}
-    },
-    "target-dir": "Octante/MarvelAPIBundle"
+    }
 }
