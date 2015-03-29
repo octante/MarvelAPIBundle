@@ -5,7 +5,7 @@ Setting up the bundle
 ```yaml
 {
     "require": {
-        "octante/marvel-api-bundle": "1.0.*@dev"
+        "octante/marvel-api-bundle": "1.0.*"
     }
 }
 ```
@@ -21,7 +21,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Octante\Bundle\MarvelAPIBundle\MarvelAPIBundle(),
+        new Octante\MarvelAPIBundle\MarvelAPIBundle(),
     );
 }
 ```
