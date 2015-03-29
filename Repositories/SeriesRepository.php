@@ -33,8 +33,10 @@ class SeriesRepository
      */
     public function getSeries(SerieQuery $query)
     {
+        $baseUrl = BaseURL::create('series');
+
         $data = $this->client
-                     ->send($query->getQuery());
+            ->send($baseUrl->getURL() . '?' . $query->getQuery());
 
         return SeriesCollection::create(json_decode($data, true));
     }

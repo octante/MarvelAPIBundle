@@ -33,8 +33,10 @@ class EventsRepository
      */
     public function getEvents(EventQuery $query)
     {
+        $baseUrl = BaseURL::create('events');
+
         $data = $this->client
-                     ->send($query->getQuery());
+            ->send($baseUrl->getURL() . '?' . $query->getQuery());
 
         return EventsCollection::create(json_decode($data, true));
     }

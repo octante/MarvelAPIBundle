@@ -14,7 +14,7 @@ use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\StoryQuery;
 use Octante\MarvelAPIBundle\Model\ValueObjects\StoryId;
 
-class StoryRepository
+class StoriesRepository
 {
     private $client;
 
@@ -31,10 +31,12 @@ class StoryRepository
      *
      * @return StoriesCollection
      */
-    public function getStory(StoryQuery $query)
+    public function getStories(StoryQuery $query)
     {
+        $baseUrl = BaseURL::create('stories');
+
         $data = $this->client
-                     ->send($query->getQuery());
+            ->send($baseUrl->getURL() . '?' . $query->getQuery());
 
         return StoriesCollection::create(json_decode($data, true));
     }

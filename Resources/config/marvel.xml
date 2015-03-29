@@ -6,6 +6,22 @@
     <parameters>
         <parameter key="octante_marvel.comics_query.class">Octante\MarvelAPIBundle\Model\Query\ComicQuery</parameter>
         <parameter key="octante_marvel.comics.class">Octante\MarvelAPIBundle\Repositories\ComicsRepository</parameter>
+
+        <parameter key="octante_marvel.characters_query.class">Octante\MarvelAPIBundle\Model\Query\CharacterQuery</parameter>
+        <parameter key="octante_marvel.characters.class">Octante\MarvelAPIBundle\Repositories\CharactersRepository</parameter>
+
+        <parameter key="octante_marvel.events_query.class">Octante\MarvelAPIBundle\Model\Query\EventQuery</parameter>
+        <parameter key="octante_marvel.events.class">Octante\MarvelAPIBundle\Repositories\EventsRepository</parameter>
+
+        <parameter key="octante_marvel.series_query.class">Octante\MarvelAPIBundle\Model\Query\SerieQuery</parameter>
+        <parameter key="octante_marvel.series.class">Octante\MarvelAPIBundle\Repositories\SeriesRepository</parameter>
+
+        <parameter key="octante_marvel.stories_query.class">Octante\MarvelAPIBundle\Model\Query\StoryQuery</parameter>
+        <parameter key="octante_marvel.stories.class">Octante\MarvelAPIBundle\Repositories\StoriesRepository</parameter>
+
+        <parameter key="octante_marvel.creators_query.class">Octante\MarvelAPIBundle\Model\Query\CreatorQuery</parameter>
+        <parameter key="octante_marvel.creators.class">Octante\MarvelAPIBundle\Repositories\CreatorsRepository</parameter>
+
         <parameter key="octante_marvel.client.class">Octante\MarvelAPIBundle\Lib\Client</parameter>
         <parameter key="octante_marvel.authentication.class">Octante\MarvelAPIBundle\Lib\Authentication</parameter>
     </parameters>
@@ -19,11 +35,39 @@
         <service id="marvel.client" class="%octante_marvel.client.class%">
             <argument type="service" id="marvel.authentication"/>
         </service>
+
         <service id="marvel.comics_query" class="%octante_marvel.comics_query.class%">
         </service>
+        <service id="marvel.characters_query" class="%octante_marvel.characters_query.class%">
+        </service>
+        <service id="marvel.creators_query" class="%octante_marvel.creators_query.class%">
+        </service>
+        <service id="marvel.events_query" class="%octante_marvel.events_query.class%">
+        </service>
+        <service id="marvel.series_query" class="%octante_marvel.series_query.class%">
+        </service>
+        <service id="marvel.stories_query" class="%octante_marvel.stories_query.class%">
+        </service>
+
         <service id="marvel.comics" class="%octante_marvel.comics.class%">
             <argument type="service" id="marvel.client"/>
         </service>
+        <service id="marvel.characters" class="%octante_marvel.characters.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+        <service id="marvel.series" class="%octante_marvel.series.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+        <service id="marvel.events" class="%octante_marvel.events.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+        <service id="marvel.stories" class="%octante_marvel.stories.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+        <service id="marvel.creators" class="%octante_marvel.creators.class%">
+            <argument type="service" id="marvel.client"/>
+        </service>
+
     </services>
 
 </container>

@@ -33,8 +33,10 @@ class CreatorsRepository
      */
     public function getCreators(CreatorQuery $query)
     {
+        $baseUrl = BaseURL::create('creators');
+
         $data = $this->client
-                     ->send($query->getQuery());
+            ->send($baseUrl->getURL() . '?' . $query->getQuery());
 
         return CreatorsCollection::create(json_decode($data, true));
     }

@@ -9,9 +9,9 @@
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
 
 
-use Octante\MarvelAPIBundle\Repositories\StoryRepository;
+use Octante\MarvelAPIBundle\Repositories\StoriesRepository;
 
-class StoryRepositoryTest extends \PHPUnit_Framework_TestCase
+class StoriesRepositoryTest extends \PHPUnit_Framework_TestCase
 {
     private $client;
     private $queryMock;
@@ -40,8 +40,8 @@ class StoryRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
-        $sut = new StoryRepository($this->client);
-        $sut->getStory($this->queryMock);
+        $sut = new StoriesRepository($this->client);
+        $sut->getStories($this->queryMock);
     }
 
     /**
@@ -58,8 +58,8 @@ class StoryRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
-        $sut = new StoryRepository($this->client);
-        $sut->getStory($this->queryMock);
+        $sut = new StoriesRepository($this->client);
+        $sut->getStories($this->queryMock);
     }
 
     /**
@@ -76,7 +76,7 @@ class StoryRepositoryTest extends \PHPUnit_Framework_TestCase
             ->method('send')
             ->will($this->returnValue($jsonResponse));
 
-        $sut = new StoryRepository($this->client);
+        $sut = new StoriesRepository($this->client);
         $storiesData = $sut->getStoryById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\StoriesCollection', $storiesData);
     }
