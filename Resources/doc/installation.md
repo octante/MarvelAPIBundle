@@ -2,7 +2,13 @@ Setting up the bundle
 =============================
 ### A) Add MarvelAPIBundle to your composer.json
 
-// TODO : Add marvel api bundle to packagist
+```yaml
+{
+    "require": {
+        "octante/marvel-api-bundle": "1.0.*@dev"
+    }
+}
+```
 
 ### B) Enable the bundle
 
