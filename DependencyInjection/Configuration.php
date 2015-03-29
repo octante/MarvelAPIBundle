@@ -17,8 +17,6 @@ use Symfony\Component\Config\Definition\ConfigurationInterface;
 /**
  * MarvelAPIBundle configuration class.
  *
- * @author Issel Guberna <issel.guberna@gmail.com>
- *
  */
 class Configuration implements ConfigurationInterface
 {

@@ -1,5 +1,5 @@
 {
-    "name": "octante/marvel-api",
+    "name": "octante/marvel-api-bundle",
     "type": "symfony-bundle",
     "description": "Marvel API bundle for Symfony2",
     "keywords": ["marvel","api"],

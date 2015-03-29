@@ -1,12 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: isselguberna
- * Date: 21/3/15
- * Time: 17:08
+/*
+ * This file is part of the MarvelAPIBundle package.
+ *
+ * (c) Issel Guberna <issel.guberna@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Octante\MarvelAPIBundle\Repositories;
+
 
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
@@ -16,6 +19,9 @@ use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
 
 class EventsRepository
 {
+    /**
+     * @var \Octante\MarvelAPIBundle\Lib\Client
+     */
     private $client;
 
     /**
