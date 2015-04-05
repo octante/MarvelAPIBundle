@@ -42,6 +42,7 @@ class Client
         curl_setopt($ch, CURLOPT_URL, $url . '&' . $this->authenticationService->getAuthenticationUrlParams());
         curl_setopt($ch, CURLOPT_HEADER, TRUE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
@@ -60,4 +61,4 @@ class Client
 
         return $body;
     }
-} 
+}
