@@ -11,8 +11,12 @@
 namespace Octante\MarvelAPIBundle\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
+use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
+use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\CreatorQuery;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
@@ -42,7 +46,7 @@ class CreatorsRepository
         $baseUrl = BaseURL::create('creators');
 
         $data = $this->client
-            ->send($baseUrl->getURL() . '?' . $query->getQuery());
+            ->send($baseUrl->getURL() . $query->getQuery());
 
         return CreatorsCollection::create(json_decode($data, true));
     }
@@ -69,24 +73,28 @@ class CreatorsRepository
      * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
-     * @return CreatorsCollection
+     * @return ComicsCollection
      */
     public function getComicsFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
+
         $baseUrl = BaseURL::create(
             'creators',
             CreatorId::create($creatorId)->getCreatorId(),
             'comics'
         );
 
-        return $this->getCreatorsCollection($baseUrl, $creatorQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $creatorQuery->getQuery());
+
+        return ComicsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
-     * @return CreatorsCollection
+     * @return EventsCollection
      */
     public function getEventsFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
@@ -96,14 +104,17 @@ class CreatorsRepository
             'events'
         );
 
-        return $this->getCreatorsCollection($baseUrl, $creatorQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $creatorQuery->getQuery());
+
+        return EventsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
-     * @return CreatorsCollection
+     * @return SeriesCollection
      */
     public function getSeriesFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
@@ -113,14 +124,17 @@ class CreatorsRepository
             'series'
         );
 
-        return $this->getCreatorsCollection($baseUrl, $creatorQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $creatorQuery->getQuery());
+
+        return SeriesCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $creatorId
      * @param CreatorQuery $creatorQuery
      *
-     * @return CreatorsCollection
+     * @return StoriesCollection
      */
     public function getStoriesFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
@@ -130,20 +144,9 @@ class CreatorsRepository
             'stories'
         );
 
-        return $this->getCreatorsCollection($baseUrl, $creatorQuery);
-    }
-
-    /**
-     * @param BaseURL $baseUrl
-     * @param CreatorQuery $creatorQuery
-     *
-     * @return CreatorsCollection
-     */
-    private function getCreatorsCollection($baseUrl, $creatorQuery)
-    {
         $data = $this->client
-            ->send($baseUrl->getURL() . '?' . $creatorQuery->getQuery());
+            ->send($baseUrl->getURL() . $creatorQuery->getQuery());
 
-        return CreatorsCollection::create(json_decode($data, true));
+        return StoriesCollection::create(json_decode($data, true));
     }
 } 

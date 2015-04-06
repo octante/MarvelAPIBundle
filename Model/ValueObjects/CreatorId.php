@@ -25,7 +25,7 @@ class CreatorId
      */
     private function __construct($creatorId)
     {
-        $this->comicId = $creatorId;
+        $this->creatorId = $creatorId;
     }
 
     /**

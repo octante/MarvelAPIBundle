@@ -25,7 +25,7 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
     public function test_createBaseUrl_ThreeParameters_returnCorrectlyURL()
     {
         $baseURL = BaseURL::create('filter', 1245, 'resource');
-        $expected = BaseURLTest::BASE_URL . 'filter/1245/resource';
+        $expected = BaseURLTest::BASE_URL . 'filter/1245/resource?';
         $this->assertEquals($expected, $baseURL->getURL());
     }
 
@@ -37,7 +37,7 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
     function test_createBaseUrl_OnlyFilterParameter_returnUrlWithFilterParameter()
     {
         $baseURL = BaseURL::create('filter');
-        $expected = BaseURLTest::BASE_URL . 'filter';
+        $expected = BaseURLTest::BASE_URL . 'filter?';
         $this->assertEquals($expected, $baseURL->getURL());
     }
 
@@ -49,7 +49,7 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
     function test_createBaseUrl_OnlyWithFilterAndIdParameters_returnUrlWithFilterAndIdParameters()
     {
         $baseURL = BaseURL::create('filter', 1245);
-        $expected = BaseURLTest::BASE_URL . 'filter/1245';
+        $expected = BaseURLTest::BASE_URL . 'filter/1245?';
         $this->assertEquals($expected, $baseURL->getURL());
     }
 

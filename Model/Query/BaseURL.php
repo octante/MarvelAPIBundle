@@ -63,8 +63,9 @@ class BaseURL
     }
 
     /**
-     * @todo Needs the token!! Load it from configuration!!
+     * @todo Load authentication tokens here, not in client. It is an architecture error.
      *
+     * @throws \InvalidArgumentException
      * @return string
      */
     public function getURL()
@@ -82,6 +83,6 @@ class BaseURL
             $url .= '/' . $this->resource;
         }
 
-        return $url;
+        return $url . '?';
     }
 } 

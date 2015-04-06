@@ -38,8 +38,10 @@ class Client
      */
     public function send($url)
     {
+        $authenticatedUrl = $url . $this->authenticationService->getAuthenticationUrlParams();
+
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url . '&' . $this->authenticationService->getAuthenticationUrlParams());
+        curl_setopt($ch, CURLOPT_URL, $authenticatedUrl);
         curl_setopt($ch, CURLOPT_HEADER, TRUE);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
         $response = curl_exec($ch);

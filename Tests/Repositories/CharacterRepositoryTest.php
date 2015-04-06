@@ -83,4 +83,80 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
         $characterData = $sut->getCharacterById(1011334);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\CharactersCollection', $characterData);
     }
+
+    /**
+     * when: getComicsFromCharacter
+     * with: ACharacterId
+     * should: clientReturnComicsCollection
+     */
+    function test_getComicsFromCharacter_ACharacterId_clientReturnComicsCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComicsCollection.json');
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CharactersRepository($this->client);
+        $characterData = $sut->getComicsFromCharacter(1011334, $this->queryMock);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\ComicsCollection', $characterData);
+    }
+
+    /**
+     * when: getEventsFromCharacter
+     * with: ACharacterId
+     * should: clientReturnEventsCollection
+     */
+    function test_getEventsFromCharacter_ACharacterId_clientReturnEventsCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEventsCollection.json');
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CharactersRepository($this->client);
+        $characterData = $sut->getEventsFromCharacter(1011334, $this->queryMock);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\EventsCollection', $characterData);
+    }
+
+    /**
+     * when: getSeriesFromCharacter
+     * with: ACharacterId
+     * should: clientReturnSeriesCollection
+     */
+    function test_getSeriesFromCharacter_ACharacterId_clientReturnSeriesCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSeriesCollection.json');
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CharactersRepository($this->client);
+        $characterData = $sut->getSeriesFromCharacter(1011334, $this->queryMock);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\SeriesCollection', $characterData);
+    }
+
+    /**
+     * when: getStoriesFromCharacter
+     * with: ACharacterId
+     * should: clientReturnStoriesCollection
+     */
+    function test_getStoriesFromCharacter_ACharacterId_clientReturnStoriesCollection()
+    {
+        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getStoriesCollection.json');
+
+        $this->client
+            ->expects($this->once())
+            ->method('send')
+            ->will($this->returnValue($jsonResponse));
+
+        $sut = new CharactersRepository($this->client);
+        $characterData = $sut->getStoriesFromCharacter(1011334, $this->queryMock);
+        $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\StoriesCollection', $characterData);
+    }
 }

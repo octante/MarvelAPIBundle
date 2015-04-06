@@ -12,6 +12,10 @@ namespace Octante\MarvelAPIBundle\Repositories;
 
 
 use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
+use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
+use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\CharacterQuery;
 use Octante\MarvelAPIBundle\Lib\Client;
@@ -41,7 +45,7 @@ class CharactersRepository
     {
         $baseURL = BaseURL::create('characters');
         $data = $this->client
-                     ->send($baseURL->getURL() . '?' . $query->getQuery());
+                     ->send($baseURL->getURL() . $query->getQuery());
 
         return CharactersCollection::create(json_decode($data, true));
     }
@@ -68,7 +72,7 @@ class CharactersRepository
      * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
-     * @return CharactersCollection
+     * @return ComicsCollection
      */
     public function getComicsFromCharacter($characterId, CharacterQuery $characterQuery)
     {
@@ -78,14 +82,17 @@ class CharactersRepository
             'comics'
         );
 
-        return $this->getCharactersCollection($baseUrl, $characterQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $characterQuery->getQuery());
+
+        return ComicsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
-     * @return CharactersCollection
+     * @return EventsCollection
      */
     public function getEventsFromCharacter($characterId, CharacterQuery $characterQuery)
     {
@@ -95,14 +102,17 @@ class CharactersRepository
             'events'
         );
 
-        return $this->getCharactersCollection($baseUrl, $characterQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $characterQuery->getQuery());
+
+        return EventsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
-     * @return CharactersCollection
+     * @return SeriesCollection
      */
     public function getSeriesFromCharacter($characterId, CharacterQuery $characterQuery)
     {
@@ -112,14 +122,17 @@ class CharactersRepository
             'series'
         );
 
-        return $this->getCharactersCollection($baseUrl, $characterQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $characterQuery->getQuery());
+
+        return SeriesCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $characterId
      * @param CharacterQuery $characterQuery
      *
-     * @return CharactersCollection
+     * @return StoriesCollection
      */
     public function getStoriesFromCharacter($characterId, CharacterQuery $characterQuery)
     {
@@ -129,20 +142,9 @@ class CharactersRepository
             'stories'
         );
 
-        return $this->getCharactersCollection($baseUrl, $characterQuery);
-    }
-
-    /**
-     * @param BaseURL $baseUrl
-     * @param CharacterQuery $characterQuery
-     *
-     * @return CharactersCollection
-     */
-    private function getCharactersCollection($baseUrl, $characterQuery)
-    {
         $data = $this->client
-                     ->send($baseUrl->getURL() . '?' . $characterQuery->getQuery());
+            ->send($baseUrl->getURL() . $characterQuery->getQuery());
 
-        return CharactersCollection::create(json_decode($data, true));
+        return StoriesCollection::create(json_decode($data, true));
     }
 } 

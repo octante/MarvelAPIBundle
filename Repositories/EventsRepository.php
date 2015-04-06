@@ -11,8 +11,13 @@
 namespace Octante\MarvelAPIBundle\Repositories;
 
 
+use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
+use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
+use Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
 use Octante\MarvelAPIBundle\Lib\Client;
+use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
+use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\EventQuery;
 use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
@@ -42,7 +47,7 @@ class EventsRepository
         $baseUrl = BaseURL::create('events');
 
         $data = $this->client
-            ->send($baseUrl->getURL() . '?' . $query->getQuery());
+            ->send($baseUrl->getURL() . $query->getQuery());
 
         return EventsCollection::create(json_decode($data, true));
     }
@@ -69,7 +74,7 @@ class EventsRepository
      * @param int $eventId
      * @param EventQuery $eventQuery
      *
-     * @return EventsCollection
+     * @return CharactersCollection
      */
     public function getCharactersFromEvent($eventId, EventQuery $eventQuery)
     {
@@ -79,14 +84,17 @@ class EventsRepository
             'characters'
         );
 
-        return $this->getEventsCollection($baseUrl, $eventQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $eventQuery->getQuery());
+
+        return CharactersCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $eventId
      * @param EventQuery $eventQuery
      *
-     * @return EventsCollection
+     * @return ComicsCollection
      */
     public function getComicsFromEvent($eventId, EventQuery $eventQuery)
     {
@@ -96,16 +104,19 @@ class EventsRepository
             'comics'
         );
 
-        return $this->getEventsCollection($baseUrl, $eventQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $eventQuery->getQuery());
+
+        return ComicsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $eventId
      * @param EventQuery $eventQuery
      *
-     * @return EventsCollection
+     * @return CreatorsCollection
      */
-    public function getCreatorsFromCreator($eventId, EventQuery $eventQuery)
+    public function getCreatorsFromEvent($eventId, EventQuery $eventQuery)
     {
         $baseUrl = BaseURL::create(
             'events',
@@ -113,16 +124,19 @@ class EventsRepository
             'creators'
         );
 
-        return $this->getEventsCollection($baseUrl, $eventQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $eventQuery->getQuery());
+
+        return CreatorsCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $eventId
      * @param EventQuery $eventQuery
      *
-     * @return EventsCollection
+     * @return SeriesCollection
      */
-    public function getSeriesFromCreator($eventId, EventQuery $eventQuery)
+    public function getSeriesFromEvent($eventId, EventQuery $eventQuery)
     {
         $baseUrl = BaseURL::create(
             'events',
@@ -130,16 +144,19 @@ class EventsRepository
             'series'
         );
 
-        return $this->getEventsCollection($baseUrl, $eventQuery);
+        $data = $this->client
+            ->send($baseUrl->getURL() . $eventQuery->getQuery());
+
+        return SeriesCollection::create(json_decode($data, true));
     }
 
     /**
      * @param int $eventId
      * @param EventQuery $eventQuery
      *
-     * @return EventsCollection
+     * @return StoriesCollection
      */
-    public function getStoriesFromCreator($eventId, EventQuery $eventQuery)
+    public function getStoriesFromEvent($eventId, EventQuery $eventQuery)
     {
         $baseUrl = BaseURL::create(
             'events',
@@ -147,20 +164,9 @@ class EventsRepository
             'stories'
         );
 
-        return $this->getEventsCollection($baseUrl, $eventQuery);
-    }
-
-    /**
-     * @param BaseURL $baseUrl
-     * @param EventQuery $eventQuery
-     *
-     * @return EventsCollection
-     */
-    private function getEventsCollection($baseUrl, $eventQuery)
-    {
         $data = $this->client
-            ->send($baseUrl->getURL() . '?' . $eventQuery->getQuery());
+            ->send($baseUrl->getURL() . $eventQuery->getQuery());
 
-        return EventsCollection::create(json_decode($data, true));
+        return StoriesCollection::create(json_decode($data, true));
     }
 } 
