@@ -709,11 +709,11 @@ class Comic implements \JsonSerializable
     /**
      * Allow to be serialized by json_encode
      * http://stackoverflow.com/questions/7005860/php-json-encode-class-private-members
+     * 
+     * @return array
      */
     public function JsonSerialize()
     {
-        $vars = get_object_vars($this);
-
-        return $vars;
+        return get_object_vars($this);
     }
 }
