@@ -25,6 +25,8 @@
         <parameter key="octante_marvel_api.client.class">Octante\MarvelAPIBundle\Lib\Client</parameter>
         <parameter key="octante_marvel_api.authentication.class">Octante\MarvelAPIBundle\Lib\Authentication</parameter>
 
+        <parameter key="octante_marvel_api.encode2json.class">Octante\MarvelAPIBundle\Services\JsonSerialize</parameter>
+
     </parameters>
 
     <services>
@@ -67,6 +69,9 @@
         </service>
         <service id="marvel.creators" class="%octante_marvel_api.creators.class%">
             <argument type="service" id="marvel.client"/>
+        </service>
+
+        <service id="marvel.tojson" class="%octante_marvel_api.encode2json.class%">
         </service>
 
     </services>
