@@ -22,7 +22,7 @@ use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
 
-class Event
+class Event implements \JsonSerializable
 {
     /**
      * The unique ID of the comic resource.,
@@ -138,7 +138,7 @@ class Event
 
     /**
      * A summary representation of the event which preceded this event
-     * 
+     *
      * @var EventSummary
      */
     private $previous;
@@ -432,4 +432,15 @@ class Event
     {
         return $this->urls;
     }
-} 
+
+    /**
+     * Allow to be serialized by json_encode
+     * http://stackoverflow.com/questions/7005860/php-json-encode-class-private-members
+     * 
+     * @return array
+     */
+    public function JsonSerialize()
+    {
+        return get_object_vars($this);
+    }
+}

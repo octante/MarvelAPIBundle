@@ -18,7 +18,7 @@ use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 use Octante\MarvelAPIBundle\Model\ValueObjects\StoryId;
 
-class Story
+class Story implements \JsonSerializable
 {
     /**
      * The unique ID of the comic resource.,
@@ -336,4 +336,15 @@ class Story
     {
         return $this->originalIssue;
     }
-} 
+
+    /**
+     * Allow to be serialized by json_encode
+     * http://stackoverflow.com/questions/7005860/php-json-encode-class-private-members
+     * 
+     * @return array
+     */
+    public function JsonSerialize()
+    {
+        return get_object_vars($this);
+    }
+}
