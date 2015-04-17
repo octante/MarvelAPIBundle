@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Query;
-
 
 use Octante\MarvelAPIBundle\Model\Query\ComicQuery;
 
@@ -41,7 +41,7 @@ class ComicQueryTest extends \PHPUnit_Framework_TestCase
      * with: WithAllParameters
      * should: queryStringIsBuildCorrectly
      */
-    function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
+    public function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
     {
         $sut = new ComicQuery();
         $sut->setCharacters(self::CHARACTERS);
@@ -75,14 +75,13 @@ class ComicQueryTest extends \PHPUnit_Framework_TestCase
 
         $url = $sut->getQuery();
 
-        $expected = "characters=52303,52301&collaborators=4430,4431&creators=4430,4431&dateDescriptor=2015-03-25&".
-                        "dateRange=2015-03-25&diamondCode=MAR150656&digitalId=0&ean=9780785 163909 51999&".
-                        "events=1234,1235&format=comic&formatType=comic&hasDigitalIssue=1&isbn=978-0-7851-6390-9&".
-                        "issn=2049-3630&issueNumber=0&modifiedSince=2015-03-25&noVariants=1&series=15481,15482&".
-                        "sharedAppearances=Spider-Man, Wolverine&startYear=2004&stories=93946,93945&title=Spider-Man&".
+        $expected = "characters=52303,52301&collaborators=4430,4431&creators=4430,4431&dateDescriptor=2015-03-25&" .
+                        "dateRange=2015-03-25&diamondCode=MAR150656&digitalId=0&ean=9780785 163909 51999&" .
+                        "events=1234,1235&format=comic&formatType=comic&hasDigitalIssue=1&isbn=978-0-7851-6390-9&" .
+                        "issn=2049-3630&issueNumber=0&modifiedSince=2015-03-25&noVariants=1&series=15481,15482&" .
+                        "sharedAppearances=Spider-Man, Wolverine&startYear=2004&stories=93946,93945&title=Spider-Man&" .
                         "titleStartsWith=Spider&upc=75960608226100111&orderBy=focDate&limit=10&offset=0";
 
         $this->assertEquals($expected, $url);
     }
 }
- 

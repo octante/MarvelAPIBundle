@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -15,6 +16,9 @@ use Octante\MarvelAPIBundle\Model\Summaries\EventSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\EventId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
+/**
+ * Class EventFactory
+ */
 class EventFactory extends AbstractFactory
 {
     /**
@@ -32,7 +36,7 @@ class EventFactory extends AbstractFactory
         if (isset($eventData['description'])) {
             $event->setDescription($eventData['description']);
         }
-        if (isset($eventData['modified'])){
+        if (isset($eventData['modified'])) {
             $event->setModified($eventData['modified']);
         }
         if (isset($eventData['resourceURI'])) {
@@ -85,4 +89,4 @@ class EventFactory extends AbstractFactory
 
         return $event;
     }
-} 
+}

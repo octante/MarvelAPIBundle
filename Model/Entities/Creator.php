@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,11 +11,10 @@
 
 namespace Octante\MarvelAPIBundle\Model\Entities;
 
-
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
 use Octante\MarvelAPIBundle\Model\Lists\EventList;
 use Octante\MarvelAPIBundle\Model\Lists\StoryList;
-use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;;
+use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 
@@ -361,4 +361,4 @@ class Creator
     {
         return $this->urls;
     }
-} 
+}

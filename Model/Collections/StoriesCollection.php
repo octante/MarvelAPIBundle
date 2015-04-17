@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Collections;
-
 
 use Octante\MarvelAPIBundle\Model\DataContainer\StoryDataContainer;
 use Octante\MarvelAPIBundle\Model\ValueObjects\DataWrapper;
@@ -71,4 +71,4 @@ class StoriesCollection
             ),
             $data['etag']);
     }
-} 
+}

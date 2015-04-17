@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
 
@@ -48,7 +48,7 @@ class ComicList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class ComicList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new ComicList(
             $available,
             $returned,
@@ -84,13 +84,14 @@ class ComicList
      */
     private static function getComicSummaries($items)
     {
-        $comicSummaries = array();
+        $comicSummaries = [];
         foreach ($items as $item) {
             $comicSummaries[] = ComicSummary::create(
                 $item['resourceURI'],
                 $item['name']
             );
         }
+
         return $comicSummaries;
     }
 
@@ -125,4 +126,4 @@ class ComicList
     {
         return $this->returned;
     }
-} 
+}

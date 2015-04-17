@@ -43,8 +43,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('marvel_public_key')->end()
                 ->scalarNode('marvel_private_key')->end()
-            ->end()
-        ;
+            ->end();
 
         return $tree;
     }

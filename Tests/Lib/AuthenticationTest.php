@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Lib;
-
 
 use Octante\MarvelAPIBundle\Lib\Authentication;
 
@@ -20,12 +20,11 @@ class AuthenticationTest extends \PHPUnit_Framework_TestCase
      * with: publicKeyPrivateKeyAndTimestamp
      * should: returnHash
      */
-    function test_getHashIsCalled_publicKeyPrivateKeyAndTimestamp_returnHash()
+    public function test_getHashIsCalled_publicKeyPrivateKeyAndTimestamp_returnHash()
     {
         $sut = new Authentication('private_key', 'public_key', 'timestamp');
         $authenticationParams = $sut->getAuthenticationUrlParams();
-        $expected = '&ts=timestamp&apikey=public_key&hash=' . md5('timestamp'.'private_key'.'public_key');
+        $expected = '&ts=timestamp&apikey=public_key&hash=' . md5('timestamp' . 'private_key' . 'public_key');
         $this->assertEquals($expected, $authenticationParams);
     }
 }
- 

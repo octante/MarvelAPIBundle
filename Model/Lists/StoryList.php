@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\StorySummary;
 
@@ -48,7 +48,7 @@ class StoryList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class StoryList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new StoryList(
             $available,
             $returned,
@@ -84,7 +84,7 @@ class StoryList
      */
     private static function getStorySummaries($items)
     {
-        $storySummaries = array();
+        $storySummaries = [];
         foreach ($items as $item) {
             $storySummaries[] = StorySummary::create(
                 $item['resourceURI'],
@@ -127,4 +127,4 @@ class StoryList
     {
         return $this->returned;
     }
-} 
+}

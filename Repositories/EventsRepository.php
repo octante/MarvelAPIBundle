@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,12 +11,11 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-
+use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
 use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
-use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
 use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
@@ -71,7 +71,7 @@ class EventsRepository
     }
 
     /**
-     * @param int $eventId
+     * @param int        $eventId
      * @param EventQuery $eventQuery
      *
      * @return CharactersCollection
@@ -91,7 +91,7 @@ class EventsRepository
     }
 
     /**
-     * @param int $eventId
+     * @param int        $eventId
      * @param EventQuery $eventQuery
      *
      * @return ComicsCollection
@@ -111,7 +111,7 @@ class EventsRepository
     }
 
     /**
-     * @param int $eventId
+     * @param int        $eventId
      * @param EventQuery $eventQuery
      *
      * @return CreatorsCollection
@@ -131,7 +131,7 @@ class EventsRepository
     }
 
     /**
-     * @param int $eventId
+     * @param int        $eventId
      * @param EventQuery $eventQuery
      *
      * @return SeriesCollection
@@ -151,7 +151,7 @@ class EventsRepository
     }
 
     /**
-     * @param int $eventId
+     * @param int        $eventId
      * @param EventQuery $eventQuery
      *
      * @return StoriesCollection
@@ -169,4 +169,4 @@ class EventsRepository
 
         return StoriesCollection::create(json_decode($data, true));
     }
-} 
+}

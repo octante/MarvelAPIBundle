@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Factories;
-
 
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
@@ -20,6 +20,9 @@ use Octante\MarvelAPIBundle\Model\Lists\StoryList;
 use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Thumbnail;
 
+/**
+ * Class AbstractFactory
+ */
 class AbstractFactory
 {
     /**
@@ -137,4 +140,4 @@ class AbstractFactory
             $data['originalIssue']['name']
         );
     }
-} 
+}

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -17,9 +18,12 @@ use Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate;
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Image;
 use Octante\MarvelAPIBundle\Model\ValueObjects\Price;
-use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 use Octante\MarvelAPIBundle\Model\ValueObjects\TextObject;
+use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
+/**
+ * Class ComicFactory
+ */
 class ComicFactory extends AbstractFactory
 {
     public function createComic($comicData)
@@ -35,13 +39,13 @@ class ComicFactory extends AbstractFactory
         if (isset($comicData['issueNumber'])) {
             $comic->setIssueNumber($comicData['issueNumber']);
         }
-        if (isset($comicData['variantDescription'])){
+        if (isset($comicData['variantDescription'])) {
             $comic->setVariantDescription($comicData['variantDescription']);
         }
-        if (isset($comicData['description'])){
+        if (isset($comicData['description'])) {
             $comic->setDescription($comicData['description']);
         }
-        if (isset($comicData['modified'])){
+        if (isset($comicData['modified'])) {
             $comic->setModified($comicData['modified']);
         }
         if (isset($comicData['isbn'])) {
@@ -131,7 +135,7 @@ class ComicFactory extends AbstractFactory
      */
     protected function getTextObjects($comicData)
     {
-        $textObjects = array();
+        $textObjects = [];
         foreach ($comicData as $textObject) {
             $textObjects[] = TextObject::create(
                     $textObject['type'],
@@ -150,7 +154,7 @@ class ComicFactory extends AbstractFactory
      */
     protected function getComicSummaryList($comicData)
     {
-        $collections = array();
+        $collections = [];
         foreach ($comicData as $comicSummary) {
             $collections[] = ComicSummary::create(
                                 $comicSummary['resourceURI'],
@@ -168,7 +172,7 @@ class ComicFactory extends AbstractFactory
      */
     protected function getComicDates($comicData)
     {
-        $dates = array();
+        $dates = [];
         foreach ($comicData as $comicDates) {
             $dates[] = ComicDate::create(
                             $comicDates['type'],
@@ -186,7 +190,7 @@ class ComicFactory extends AbstractFactory
      */
     protected function getPrices($comicData)
     {
-        $prices = array();
+        $prices = [];
         foreach ($comicData as $price) {
             $prices[] = Price::create(
                             $price['type'],
@@ -204,7 +208,7 @@ class ComicFactory extends AbstractFactory
      */
     protected function getImages($comicData)
     {
-        $images = array();
+        $images = [];
         foreach ($comicData as $image) {
             $images[] = Image::create(
                             $image['path'],
@@ -214,4 +218,4 @@ class ComicFactory extends AbstractFactory
 
         return $images;
     }
-} 
+}

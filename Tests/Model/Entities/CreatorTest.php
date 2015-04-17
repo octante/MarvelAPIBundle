@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Entities;
-
 
 use Octante\MarvelAPIBundle\Factories\ComicFactory;
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
@@ -32,7 +32,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: AResourceURI
      * should: setResourceURI
      */
-    function test_comicEntityIsCreated_AResourceURI_setResourceURI()
+    public function test_comicEntityIsCreated_AResourceURI_setResourceURI()
     {
         $sut = $this->getSUT();
         $resourceURI = $sut->getResourceURI();
@@ -45,7 +45,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: series
      * should: setSeries
      */
-    function test_comicEntityIsCreated_series_setSeries()
+    public function test_comicEntityIsCreated_series_setSeries()
     {
         $sut = $this->getSUT();
         $series = $sut->getSeries();
@@ -56,17 +56,17 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($expected, $series);
     }
-    
+
     /**
      * when: comicEntityIsCreated
      * with: comics
      * should: setVariants
      */
-    function test_comicEntityIsCreated_comics_setVariants()
+    public function test_comicEntityIsCreated_comics_setVariants()
     {
         $sut = $this->getSUT();
         $variants = $sut->getVariants();
-        $expected = array(
+        $expected = [
             ComicSummary::create(
                 'http://variantResourceURINumber1',
                 'variant name number 1'
@@ -74,22 +74,22 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             ComicSummary::create(
                 'http://variantResourceURINumber2',
                 'variant name number 2'
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $variants);
     }
-    
+
     /**
      * when: comicEntityIsCreated
      * with: collections
      * should: setCollections
      */
-    function test_comicEntityIsCreated_collections_setCollections()
+    public function test_comicEntityIsCreated_collections_setCollections()
     {
         $sut = $this->getSUT();
         $collections = $sut->getCollections();
-        $expected = array(
+        $expected = [
             ComicSummary::create(
                 'http://collectionResourceURINumber1',
                 'collection name number 1'
@@ -97,8 +97,8 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             ComicSummary::create(
                 'http://collectionResourceURINumber2',
                 'collection name number 2'
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $collections);
     }
@@ -108,11 +108,11 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: collectedIssues
      * should: setCollectedIssues
      */
-    function test_comicEntityIsCreated_collectedIssues_setCollectedIssues()
+    public function test_comicEntityIsCreated_collectedIssues_setCollectedIssues()
     {
         $sut = $this->getSUT();
         $collectedIssues = $sut->getCollectedIssues();
-        $expected = array(
+        $expected = [
             ComicSummary::create(
                 'http://collectedIssuesResourceURINumber1',
                 'collected issues name number 1'
@@ -120,8 +120,8 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             ComicSummary::create(
                 'http://collectedIssuesResourceURINumber2',
                 'collected issues name number 2'
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $collectedIssues);
     }
@@ -131,11 +131,11 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: dates
      * should: setDates
      */
-    function test_comicEntityIsCreated_dates_setDates()
+    public function test_comicEntityIsCreated_dates_setDates()
     {
         $sut = $this->getSUT();
         $dates = $sut->getDates();
-        $expected = array(
+        $expected = [
             ComicDate::create(
                 'onsaleDate',
                 '2020-12-31T00:00:00-0500'
@@ -143,8 +143,8 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             ComicDate::create(
                 'focDate',
                 '2020-12-16T00:00:00-0500'
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $dates);
     }
@@ -154,16 +154,16 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: prices
      * should: setPrices
      */
-    function test_comicEntityIsCreated_prices_setPrices()
+    public function test_comicEntityIsCreated_prices_setPrices()
     {
         $sut = $this->getSUT();
         $prices = $sut->getPrices();
-        $expected = array(
+        $expected = [
             Price::create(
                 'printPrice',
                 19.99
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $prices);
     }
@@ -173,7 +173,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: thumbnail
      * should: setThumbnail
      */
-    function test_comicEntityIsCreated_thumbnail_setThumbnail()
+    public function test_comicEntityIsCreated_thumbnail_setThumbnail()
     {
         $sut = $this->getSUT();
         $thumbnail = $sut->getThumbnail();
@@ -190,16 +190,16 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: images
      * should: setImages
      */
-    function test_comicEntityIsCreated_images_setImages()
+    public function test_comicEntityIsCreated_images_setImages()
     {
         $sut = $this->getSUT();
         $images = $sut->getImages();
-        $expected = array(
+        $expected = [
             Image::create(
                 'http://i.annihil.us/u/prod/marvel/i/mg/c/30/4fe8cb51f32e0',
                 'jpg'
-            )
-        );
+            ),
+        ];
 
         $this->assertEquals($expected, $images);
     }
@@ -209,7 +209,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: creators
      * should: setCreators
      */
-    function test_comicEntityIsCrated_creators_setCreators()
+    public function test_comicEntityIsCrated_creators_setCreators()
     {
         $sut = $this->getSUT();
         $creators = $sut->getCreators();
@@ -217,13 +217,13 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/comics/41530/creators',
-            array(
-                array(
+            [
+                [
                     'resourceURI' => 'http://gateway.marvel.com/v1/public/creators/4430',
                     'name' => 'Jeff Young',
-                    'role' => 'editor'
-                )
-            )
+                    'role' => 'editor',
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $creators);
@@ -234,7 +234,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: characters
      * should: setCharacters
      */
-    function test_comicEntityIsCrated_charactes_setCharacters()
+    public function test_comicEntityIsCrated_charactes_setCharacters()
     {
         $sut = $this->getSUT();
         $characters = $sut->getCharacters();
@@ -242,12 +242,12 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             0,
             0,
             'http://gateway.marvel.com/v1/public/comics/41530/characters',
-            array(
-                array(
+            [
+                [
                     'resourceURI' => 'http://gateway.marvel.com/v1/public/characters/4430',
-                    'name' => 'Jeff Young'
-                )
-            )
+                    'name' => 'Jeff Young',
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $characters);
@@ -258,7 +258,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: stories
      * should: setStories
      */
-    function test_comicsEntityIsCreated_stories_setStories()
+    public function test_comicsEntityIsCreated_stories_setStories()
     {
         $sut = $this->getSUT();
         $stories = $sut->getStories();
@@ -266,18 +266,18 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             2,
             2,
             'http://gateway.marvel.com/v1/public/comics/41530/stories',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/93946",
                     "name" => "Cover #93946",
-                    "type" => "cover"
-                ),
-                array(
+                    "type" => "cover",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/93947",
                     "name" => "Interior #93947",
-                    "type" => "interiorStory"
-                )
-            )
+                    "type" => "interiorStory",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $stories);
@@ -288,7 +288,7 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
      * with: events
      * should: setEvents
      */
-    function test_comicsEntityIsCreated_events_setEvents()
+    public function test_comicsEntityIsCreated_events_setEvents()
     {
         $sut = $this->getSUT();
         $events = $sut->getEvents();
@@ -296,23 +296,22 @@ class CreatorTest extends \PHPUnit_Framework_TestCase
             0,
             0,
             'http://gateway.marvel.com/v1/public/comics/41530/events',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/events/93947",
-                    "name" => "Interior #93947"
-                )
-            )
+                    "name" => "Interior #93947",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $events);
     }
 
-
     private function getSUT()
     {
         $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getComicsCollection.json');
         $results = json_decode($jsonResponse, true);
-        return (new ComicFactory)->createComic($results['data']['results'][0]);
+
+        return (new ComicFactory())->createComic($results['data']['results'][0]);
     }
 }
- 

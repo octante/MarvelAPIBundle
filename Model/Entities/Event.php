@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Entities;
-
 
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
@@ -138,7 +138,7 @@ class Event
 
     /**
      * A summary representation of the event which preceded this event
-     * 
+     *
      * @var EventSummary
      */
     private $previous;
@@ -432,4 +432,4 @@ class Event
     {
         return $this->urls;
     }
-} 
+}

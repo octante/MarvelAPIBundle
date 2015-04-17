@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Lib;
-
 
 use Octante\MarvelAPIBundle\Exceptions\CurlErrorCodeException;
 use Octante\MarvelAPIBundle\Exceptions\CurlRequestErrorException;
@@ -42,8 +42,8 @@ class Client
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $authenticatedUrl);
-        curl_setopt($ch, CURLOPT_HEADER, TRUE);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_ENCODING, 'gzip,deflate');
         $response = curl_exec($ch);
         $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
@@ -53,11 +53,11 @@ class Client
 
         curl_close($ch);
 
-        if(!$response) {
+        if (!$response) {
             throw new CurlRequestErrorException("An error occurred in curl request \"$url\"");
         }
 
-        if($httpCode >= 400) {
+        if ($httpCode >= 400) {
             throw new CurlErrorCodeException("An error occurred in curl request: \"$httpCode\"");
         }
 

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\DataContainer;
-
 
 use Octante\MarvelAPIBundle\Factories\ComicFactory;
 
@@ -22,7 +22,7 @@ class ComicDataContainer extends DataContainer
      */
     protected static function getItems($results)
     {
-        $comics = array();
+        $comics = [];
         // @todo createComic must be static method from ComicFactory
         $comicFactory = new ComicFactory();
         if (is_array($results)) {
@@ -30,6 +30,7 @@ class ComicDataContainer extends DataContainer
                 $comics[] = $comicFactory->createComic($result);
             }
         }
+
         return $comics;
     }
-} 
+}

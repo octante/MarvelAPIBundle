@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -14,6 +15,9 @@ use Octante\MarvelAPIBundle\Model\Entities\Character;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
+/**
+ * Class CharacterFactory
+ */
 class CharacterFactory extends AbstractFactory
 {
     public function createCharacter($characterData)
@@ -26,7 +30,7 @@ class CharacterFactory extends AbstractFactory
         if (isset($characterData['description'])) {
             $character->setDescription($characterData['description']);
         }
-        if (isset($characterData['modified'])){
+        if (isset($characterData['modified'])) {
             $character->setModified($characterData['modified']);
         }
         if (isset($characterData['resourceURI'])) {
@@ -53,4 +57,4 @@ class CharacterFactory extends AbstractFactory
 
         return $character;
     }
-} 
+}

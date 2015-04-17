@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\DataContainer;
-
 
 use Octante\MarvelAPIBundle\Factories\CharacterFactory;
 
@@ -22,12 +22,13 @@ class CharacterDataContainer extends DataContainer
      */
     protected static function getItems($results)
     {
-        $comics = array();
+        $comics = [];
         // @todo createCharacter must be static method from CharacterFactory
         $characterFactory = new CharacterFactory();
         foreach ($results as $result) {
             $comics[] = $characterFactory->createCharacter($result);
         }
+
         return $comics;
     }
-} 
+}

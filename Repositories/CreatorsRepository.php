@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,10 +11,9 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-
+use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\CreatorsCollection;
-use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
 use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
@@ -70,14 +70,13 @@ class CreatorsRepository
     }
 
     /**
-     * @param int $creatorId
+     * @param int          $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return ComicsCollection
      */
     public function getComicsFromCreator($creatorId, CreatorQuery $creatorQuery)
     {
-
         $baseUrl = BaseURL::create(
             'creators',
             CreatorId::create($creatorId)->getCreatorId(),
@@ -91,7 +90,7 @@ class CreatorsRepository
     }
 
     /**
-     * @param int $creatorId
+     * @param int          $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return EventsCollection
@@ -111,7 +110,7 @@ class CreatorsRepository
     }
 
     /**
-     * @param int $creatorId
+     * @param int          $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return SeriesCollection
@@ -131,7 +130,7 @@ class CreatorsRepository
     }
 
     /**
-     * @param int $creatorId
+     * @param int          $creatorId
      * @param CreatorQuery $creatorQuery
      *
      * @return StoriesCollection
@@ -149,4 +148,4 @@ class CreatorsRepository
 
         return StoriesCollection::create(json_decode($data, true));
     }
-} 
+}

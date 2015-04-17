@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -77,6 +78,5 @@ class CharacterQuery extends Query
 
     public function setResource($resource)
     {
-
     }
 }

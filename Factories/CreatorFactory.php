@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -13,6 +14,9 @@ namespace Octante\MarvelAPIBundle\Factories;
 use Octante\MarvelAPIBundle\Model\Entities\Creator;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CreatorId;
 
+/**
+ * Class CreatorFactory
+ */
 class CreatorFactory extends AbstractFactory
 {
     public function createCreator($creatorData)
@@ -28,13 +32,13 @@ class CreatorFactory extends AbstractFactory
         if (isset($creatorData['lastName'])) {
             $creator->setLastName($creatorData['lastName']);
         }
-        if (isset($creatorData['suffix'])){
+        if (isset($creatorData['suffix'])) {
             $creator->setSuffix($creatorData['suffix']);
         }
-        if (isset($creatorData['fullName'])){
+        if (isset($creatorData['fullName'])) {
             $creator->setFullName($creatorData['fullName']);
         }
-        if (isset($creatorData['modified'])){
+        if (isset($creatorData['modified'])) {
             $creator->setModified($creatorData['modified']);
         }
         if (isset($creatorData['resourceURI'])) {
@@ -61,4 +65,4 @@ class CreatorFactory extends AbstractFactory
 
         return $creator;
     }
-} 
+}
