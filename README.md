@@ -3,6 +3,7 @@ MarvelAPIBundle
 
 [![Build Status Master](https://travis-ci.org/octante/MarvelAPIBundle.svg?branch=master)](https://travis-ci.org/octante/MarvelAPIBundle)
 [![Coverage Status](https://coveralls.io/repos/octante/MarvelAPIBundle/badge.svg?branch=master)](https://coveralls.io/r/octante/MarvelAPIBundle?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/octante/MarvelAPIBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/octante/MarvelAPIBundle/?branch=master)
 
 This bundle integrates Marvel API in your Symfony2 applications.
 
