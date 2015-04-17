@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\DataContainer;
-
 
 use Octante\MarvelAPIBundle\Factories\SerieFactory;
 
@@ -22,12 +22,13 @@ class SerieDataContainer extends DataContainer
      */
     protected static function getItems($results)
     {
-        $series = array();
+        $series = [];
         // @todo createSerie must be static method from SerieFactory
         $serieFactory = new SerieFactory();
         foreach ($results as $result) {
             $series[] = $serieFactory->createSerie($result);
         }
+
         return $series;
     }
-} 
+}

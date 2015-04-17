@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\DataContainer\DataContainer;
 
@@ -67,7 +67,7 @@ class DataWrapper
         $attributionHTML,
         DataContainer $data,
         $etag
-    ){
+    ) {
         $this->code = $code;
         $this->status = $status;
         $this->copyright = $copyright;
@@ -98,7 +98,7 @@ class DataWrapper
         $attributionHTML,
         DataContainer $data,
         $etag
-    ){
+    ) {
         return new DataWrapper(
             $code,
             $status,
@@ -165,4 +165,4 @@ class DataWrapper
     {
         return $this->status;
     }
-} 
+}

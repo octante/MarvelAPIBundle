@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Query;
-
 
 use Octante\MarvelAPIBundle\Model\Query\EventQuery;
 
@@ -20,7 +20,7 @@ class EventQueryTest extends \PHPUnit_Framework_TestCase
      * with: WithAllParameters
      * should: queryStringIsBuildCorrectly
      */
-    function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
+    public function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
     {
         $sut = new EventQuery();
         $sut->setName('Acts of Vengeance!');
@@ -37,11 +37,10 @@ class EventQueryTest extends \PHPUnit_Framework_TestCase
         $sut->setOffset(0);
 
         $url = $sut->getQuery();
-        $expected = "name=Acts of Vengeance!&nameStartsWith=Acts&modifiedSince=2015-03-25&creators=2707,2708&".
-                    "characters=1010370,1010371&series=3374,3375&comics=37047,37048&stories=3370,3369&orderBy=-name&".
+        $expected = "name=Acts of Vengeance!&nameStartsWith=Acts&modifiedSince=2015-03-25&creators=2707,2708&" .
+                    "characters=1010370,1010371&series=3374,3375&comics=37047,37048&stories=3370,3369&orderBy=-name&" .
                     "limit=10&offset=0";
 
         $this->assertEquals($expected, $url);
     }
 }
- 

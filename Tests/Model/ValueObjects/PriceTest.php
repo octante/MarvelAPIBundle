@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\ValueObjects\Price;
 
@@ -20,7 +20,7 @@ class PriceTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: returnPriceInstance
      */
-    function test_crateIsCalled_validParameters_returnPriceInstance()
+    public function test_crateIsCalled_validParameters_returnPriceInstance()
     {
         $sut = Price::create('type', 10.99);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\ValueObjects\Price', $sut);
@@ -31,7 +31,7 @@ class PriceTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: parametersHasBeenSettedCorrectly
      */
-    function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
+    public function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
         $sut = Price::create('type', 10.99);
         $this->assertEquals('type', $sut->getType());
@@ -46,7 +46,7 @@ class PriceTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Price has an invalid format "invalid_price"
      */
-    function test_createIsCalled_invalidPrice_throwAnException()
+    public function test_createIsCalled_invalidPrice_throwAnException()
     {
         Price::create('type', 'invalid_price');
     }
@@ -56,9 +56,8 @@ class PriceTest extends \PHPUnit_Framework_TestCase
      * with: invalidPriceAsString
      * should: worksCorrectly
      */
-    function test_createIsCalled_invalidPriceAsString_worksCorrectly()
+    public function test_createIsCalled_invalidPriceAsString_worksCorrectly()
     {
         Price::create('type', '10.99');
     }
 }
- 

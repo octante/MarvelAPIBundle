@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicId;
 
@@ -20,7 +20,7 @@ class ComicIdTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: ComicIdObjectIsReturned
      */
-    function test_createIsCalled_withValidParameters_ComicIdObjectIsReturned()
+    public function test_createIsCalled_withValidParameters_ComicIdObjectIsReturned()
     {
         $sut = ComicId::create(12345);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\ValueObjects\ComicId', $sut);
@@ -31,7 +31,7 @@ class ComicIdTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: parametersHasBeenCorrectlySetted
      */
-    function test_createIsCalled_withValidParameters_parametersHasBeenCorrectlySetted()
+    public function test_createIsCalled_withValidParameters_parametersHasBeenCorrectlySetted()
     {
         $sut = ComicId::create(12345);
         $this->assertEquals(12345, $sut->getComicId());
@@ -44,9 +44,8 @@ class ComicIdTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException Octante\MarvelAPIBundle\Exceptions\InvalidComicIdException
      */
-    function test_createIsCalled_withAnInvalidId_throwAnException()
+    public function test_createIsCalled_withAnInvalidId_throwAnException()
     {
         ComicId::create('an_invalid_comic_id');
     }
 }
- 

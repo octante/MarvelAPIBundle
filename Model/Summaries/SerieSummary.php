@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Summaries;
-
 
 class SerieSummary
 {
@@ -39,9 +39,9 @@ class SerieSummary
      *
      * @return SerieSummary
      */
-    public static function create($resourceURI,$name)
+    public static function create($resourceURI, $name)
     {
-        return new SerieSummary($resourceURI,$name);
+        return new SerieSummary($resourceURI, $name);
     }
 
     /**
@@ -59,4 +59,4 @@ class SerieSummary
     {
         return $this->resourceURI;
     }
-} 
+}

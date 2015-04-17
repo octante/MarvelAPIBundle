@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Entities;
-
 
 use Octante\MarvelAPIBundle\Factories\StoryFactory;
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
@@ -28,7 +28,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: AResourceURI
      * should: setResourceURI
      */
-    function test_storyEntityIsCreated_AResourceURI_setResourceURI()
+    public function test_storyEntityIsCreated_AResourceURI_setResourceURI()
     {
         $sut = $this->getSUT();
         $resourceURI = $sut->getResourceURI();
@@ -41,7 +41,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: thumbnail
      * should: setThumbnail
      */
-    function test_storyEntityIsCreated_thumbnail_setThumbnail()
+    public function test_storyEntityIsCreated_thumbnail_setThumbnail()
     {
         $sut = $this->getSUT();
         $thumbnail = $sut->getThumbnail();
@@ -58,7 +58,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: series
      * should: setSeries
      */
-    function test_storyEntityIsCreated_series_setSeries()
+    public function test_storyEntityIsCreated_series_setSeries()
     {
         $sut = $this->getSUT();
         $series = $sut->getSeries();
@@ -66,12 +66,12 @@ class StoryTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/stories/3/series',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/series/2",
                     "name" => "Amazing Spider-Man Vol. II: Revelations (2002)",
-                )
-            )
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $series);
@@ -82,7 +82,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: creators
      * should: setCreators
      */
-    function test_storyEntityIsCreated_creators_setCreators()
+    public function test_storyEntityIsCreated_creators_setCreators()
     {
         $sut = $this->getSUT();
         $creators = $sut->getCreators();
@@ -90,18 +90,18 @@ class StoryTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/stories/3/creators',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/485",
                     "name" => "Andy Lanning",
-                    "role" => "writer"
-                ),
-                array(
+                    "role" => "writer",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/9432",
                     "name" => "Sean Ryan",
-                    "role" => "writer"
-                )
-            )
+                    "role" => "writer",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $creators);
@@ -112,7 +112,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: events
      * should: setEvents
      */
-    function test_storyEntityIsCreated_events_setEvents()
+    public function test_storyEntityIsCreated_events_setEvents()
     {
         $sut = $this->getSUT();
         $events = $sut->getEvents();
@@ -120,12 +120,12 @@ class StoryTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/stories/3/events',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/events/93947",
-                    "name" => "Interior #93947"
-                )
-            )
+                    "name" => "Interior #93947",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $events);
@@ -136,7 +136,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: comics
      * should: setComics
      */
-    function test_storyEntityIsCreated_comics_setComics()
+    public function test_storyEntityIsCreated_comics_setComics()
     {
         $sut = $this->getSUT();
         $comics = $sut->getComics();
@@ -144,12 +144,12 @@ class StoryTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/stories/3/comics',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/937",
-                    "name" => "Amazing Spider-Man Vol. II: Revelations (Trade Paperback)"
-                )
-            )
+                    "name" => "Amazing Spider-Man Vol. II: Revelations (Trade Paperback)",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $comics);
@@ -160,7 +160,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: characters
      * should: setCharacters
      */
-    function test_storyEntityIsCreated_characters_setCharacters()
+    public function test_storyEntityIsCreated_characters_setCharacters()
     {
         $sut = $this->getSUT();
         $characters = $sut->getCharacters();
@@ -168,12 +168,12 @@ class StoryTest extends \PHPUnit_Framework_TestCase
             1,
             1,
             'http://gateway.marvel.com/v1/public/stories/3/characters',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/characters/1010370",
-                    "name" => "Alpha Flight"
-                )
-            )
+                    "name" => "Alpha Flight",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $characters);
@@ -184,7 +184,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
      * with: originalIssue
      * should: setOriginalIssue
      */
-    function test_storyEntityIsCreated_originalIssue_setOriginalIssue()
+    public function test_storyEntityIsCreated_originalIssue_setOriginalIssue()
     {
         $sut = $this->getSUT();
         $originalIssue = $sut->getOriginalIssue();
@@ -200,7 +200,7 @@ class StoryTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getStoriesCollection.json');
         $results = json_decode($jsonResponse, true);
-        return (new StoryFactory)->createStory($results['data']['results'][0]);
+
+        return (new StoryFactory())->createStory($results['data']['results'][0]);
     }
 }
- 

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\DataContainer;
-
 
 use Octante\MarvelAPIBundle\Factories\EventFactory;
 
@@ -22,12 +22,13 @@ class EventDataContainer extends DataContainer
      */
     protected static function getItems($results)
     {
-        $events = array();
+        $events = [];
         // @todo createEvent must be static method from EventFactory
         $eventFactory = new EventFactory();
         foreach ($results as $result) {
             $events[] = $eventFactory->createEvent($result);
         }
+
         return $events;
     }
-} 
+}

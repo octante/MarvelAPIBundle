@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Exceptions\InvalidCreatorIdException;
 
@@ -51,4 +51,4 @@ class CreatorId
     {
         return $this->creatorId;
     }
-} 
+}

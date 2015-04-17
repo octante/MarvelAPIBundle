@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\EventSummary;
 
@@ -48,7 +48,7 @@ class EventList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class EventList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new EventList(
             $available,
             $returned,
@@ -84,13 +84,14 @@ class EventList
      */
     private static function getEventSummaries($items)
     {
-        $eventSummaries = array();
+        $eventSummaries = [];
         foreach ($items as $item) {
             $eventSummaries[] = EventSummary::create(
                 $item['resourceURI'],
                 $item['name']
             );
         }
+
         return $eventSummaries;
     }
 
@@ -125,4 +126,4 @@ class EventList
     {
         return $this->returned;
     }
-} 
+}

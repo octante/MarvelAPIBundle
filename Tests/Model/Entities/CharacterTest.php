@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Entities;
-
 
 use Octante\MarvelAPIBundle\Factories\CharacterFactory;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
@@ -26,7 +26,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: AResourceURI
      * should: setResourceURI
      */
-    function test_characterEntityIsCreated_AResourceURI_setResourceURI()
+    public function test_characterEntityIsCreated_AResourceURI_setResourceURI()
     {
         $sut = $this->getSUT();
         $resourceURI = $sut->getResourceURI();
@@ -39,7 +39,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: thumbnail
      * should: setThumbnail
      */
-    function test_characterEntityIsCreated_thumbnail_setThumbnail()
+    public function test_characterEntityIsCreated_thumbnail_setThumbnail()
     {
         $sut = $this->getSUT();
         $thumbnail = $sut->getThumbnail();
@@ -56,7 +56,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: stories
      * should: setStories
      */
-    function test_charactersEntityIsCreated_stories_setStories()
+    public function test_charactersEntityIsCreated_stories_setStories()
     {
         $sut = $this->getSUT();
         $stories = $sut->getStories();
@@ -64,23 +64,23 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
             3,
             3,
             'http://gateway.marvel.com/v1/public/characters/1009742/stories',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/82130",
                     "name" => "Interior #82130",
-                    "type" => "interiorStory"
-                ),
-                array(
+                    "type" => "interiorStory",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/90817",
                     "name" => "Interior #90817",
-                    "type" => "interiorStory"
-                ),
-                array(
+                    "type" => "interiorStory",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/94784",
                     "name" => "Incredible Hulks (2009) #602, SHS VARIANT",
-                    "type" => "cover"
-                )
-            )
+                    "type" => "cover",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $stories);
@@ -91,7 +91,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: events
      * should: setEvents
      */
-    function test_charactersEntityIsCreated_events_setEvents()
+    public function test_charactersEntityIsCreated_events_setEvents()
     {
         $sut = $this->getSUT();
         $events = $sut->getEvents();
@@ -99,12 +99,12 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
             0,
             0,
             'http://gateway.marvel.com/v1/public/characters/1009742/events',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/events/94784",
-                    "name" => "Incredible Hulks (2009) #602, SHS VARIANT"
-                )
-            )
+                    "name" => "Incredible Hulks (2009) #602, SHS VARIANT",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $events);
@@ -115,7 +115,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: series
      * should: setSeries
      */
-    function test_charactersEntityIsCreated_series_setSeries()
+    public function test_charactersEntityIsCreated_series_setSeries()
     {
         $sut = $this->getSUT();
         $series = $sut->getSeries();
@@ -123,16 +123,16 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
             2,
             2,
             'http://gateway.marvel.com/v1/public/characters/1009742/series',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/series/3374",
-                    "name" => "Hulk (2008 - 2012)"
-                ),
-                array(
+                    "name" => "Hulk (2008 - 2012)",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/series/8842",
-                    "name" => "Incredible Hulks (2009 - 2011)"
-                )
-            )
+                    "name" => "Incredible Hulks (2009 - 2011)",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $series);
@@ -143,7 +143,7 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
      * with: comics
      * should: setComics
      */
-    function test_charactersEntityIsCreated_comics_setComics()
+    public function test_charactersEntityIsCreated_comics_setComics()
     {
         $sut = $this->getSUT();
         $comics = $sut->getComics();
@@ -151,31 +151,30 @@ class CharacterTest extends \PHPUnit_Framework_TestCase
             3,
             3,
             'http://gateway.marvel.com/v1/public/characters/1009742/comics',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/37047",
-                    "name" => "Hulk (2008) #36"
-                ),
-                array(
+                    "name" => "Hulk (2008) #36",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/40023",
-                    "name" => "Hulk (2008) #36 (I Am Captain America Variant)"
-                ),
-                array(
+                    "name" => "Hulk (2008) #36 (I Am Captain America Variant)",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/29541",
-                    "name" => "Incredible Hulks (2009) #602 (SHS VARIANT)"
-                )
-            )
+                    "name" => "Incredible Hulks (2009) #602 (SHS VARIANT)",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $comics);
     }
 
-
     private function getSUT()
     {
         $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getCharactersCollection.json');
         $results = json_decode($jsonResponse, true);
-        return (new CharacterFactory)->createCharacter($results['data']['results'][0]);
+
+        return (new CharacterFactory())->createCharacter($results['data']['results'][0]);
     }
 }
- 

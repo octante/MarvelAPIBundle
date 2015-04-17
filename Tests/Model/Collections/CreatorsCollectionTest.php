@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -17,9 +18,9 @@ class CreatorsCollectionTest extends PHPUnit_Framework_TestCase
      * with: creatorsCollectionJSONData
      * should: constructCreatorsDataWrapper
      */
-    function test_hidrateIsCalled_charactersCollectionJSONData_constructCharactersDataWrapper()
+    public function test_hidrateIsCalled_charactersCollectionJSONData_constructCharactersDataWrapper()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../../Fixtures/getCreatorsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getCreatorsCollection.json');
 
         $sut = CreatorsCollection::create(json_decode($jsonResponse, true));
         $result = $sut->getCreatorsDataWrapper();

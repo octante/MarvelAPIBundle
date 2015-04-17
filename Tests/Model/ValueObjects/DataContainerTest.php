@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\DataContainer\DataContainer;
 
@@ -20,12 +20,12 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: DataContainerInstanceIsReturned
      */
-    function test_createIsCalled_withValidParameters_DataContainerInstanceIsReturned()
+    public function test_createIsCalled_withValidParameters_DataContainerInstanceIsReturned()
     {
-        $sut = DataContainer::create(1, 2, 3, 4, array());
+        $sut = DataContainer::create(1, 2, 3, 4, []);
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\DataContainer\DataContainer', $sut);
     }
-    
+
     /**
      * when: createIsCalled
      * with: withAnInvalidOffset
@@ -34,9 +34,9 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Invalid offset "invalid_offset"
      */
-    function test_createIsCalled_withAnInvalidOffset_throwAnException()
+    public function test_createIsCalled_withAnInvalidOffset_throwAnException()
     {
-        DataContainer::create('invalid_offset', 2, 3, 4, array());
+        DataContainer::create('invalid_offset', 2, 3, 4, []);
     }
 
     /**
@@ -47,9 +47,9 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Invalid limit "invalid_limit"
      */
-    function test_createIsCalled_withAnInvalidLimit_throwAnException()
+    public function test_createIsCalled_withAnInvalidLimit_throwAnException()
     {
-        DataContainer::create(1, 'invalid_limit', 3, 4, array());
+        DataContainer::create(1, 'invalid_limit', 3, 4, []);
     }
 
     /**
@@ -60,9 +60,9 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Invalid total "invalid_total"
      */
-    function test_createIsCalled_withAnInvalidTotal_throwAnException()
+    public function test_createIsCalled_withAnInvalidTotal_throwAnException()
     {
-        DataContainer::create(1, 2, 'invalid_total', 4, array());
+        DataContainer::create(1, 2, 'invalid_total', 4, []);
     }
 
     /**
@@ -73,9 +73,9 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * @expectedException \InvalidArgumentException
      * @expectedExceptionMessage Invalid count "invalid_count"
      */
-    function test_createIsCalled_withAnInvalidCount_throwAnException()
+    public function test_createIsCalled_withAnInvalidCount_throwAnException()
     {
-        DataContainer::create(1, 2, 3, 'invalid_count', array());
+        DataContainer::create(1, 2, 3, 'invalid_count', []);
     }
 
     /**
@@ -83,14 +83,13 @@ class DataContainerTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: parametersHasBeenSetted
      */
-    function test_createIsCalled_withValidParameters_parametersHasBeenSetted()
+    public function test_createIsCalled_withValidParameters_parametersHasBeenSetted()
     {
-        $sut = DataContainer::create(1, 2, 3, 4, array());
+        $sut = DataContainer::create(1, 2, 3, 4, []);
         $this->assertEquals(1, $sut->getOffset());
         $this->assertEquals(2, $sut->getLimit());
         $this->assertEquals(3, $sut->getTotal());
         $this->assertEquals(4, $sut->getCount());
-        $this->assertEquals(array(), $sut->getResults());
+        $this->assertEquals([], $sut->getResults());
     }
 }
- 

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Summaries;
-
 
 class StorySummary
 {
@@ -75,4 +75,4 @@ class StorySummary
     {
         return $this->type;
     }
-} 
+}

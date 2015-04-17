@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,7 +11,7 @@
 
 namespace Octante\MarvelAPIBundle\Repositories;
 
-
+use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
 use Octante\MarvelAPIBundle\Model\Collections\ComicsCollection;
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
@@ -18,7 +19,6 @@ use Octante\MarvelAPIBundle\Model\Collections\SeriesCollection;
 use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 use Octante\MarvelAPIBundle\Model\Query\CharacterQuery;
-use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\ValueObjects\CharacterId;
 
 class CharactersRepository
@@ -69,7 +69,7 @@ class CharactersRepository
     }
 
     /**
-     * @param int $characterId
+     * @param int            $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return ComicsCollection
@@ -89,7 +89,7 @@ class CharactersRepository
     }
 
     /**
-     * @param int $characterId
+     * @param int            $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return EventsCollection
@@ -109,7 +109,7 @@ class CharactersRepository
     }
 
     /**
-     * @param int $characterId
+     * @param int            $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return SeriesCollection
@@ -129,7 +129,7 @@ class CharactersRepository
     }
 
     /**
-     * @param int $characterId
+     * @param int            $characterId
      * @param CharacterQuery $characterQuery
      *
      * @return StoriesCollection
@@ -147,4 +147,4 @@ class CharactersRepository
 
         return StoriesCollection::create(json_decode($data, true));
     }
-} 
+}

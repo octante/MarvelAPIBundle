@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Collections;
-
 
 use Octante\MarvelAPIBundle\Model\DataContainer\ComicDataContainer;
 use Octante\MarvelAPIBundle\Model\ValueObjects\DataWrapper;
@@ -36,10 +36,7 @@ class ComicsCollection
      */
     public static function create($data)
     {
-        return (new ComicsCollection(
-                    self::parseDataWrapper($data)
-                )
-            );
+        return (new ComicsCollection(self::parseDataWrapper($data)));
     }
 
     /**
@@ -80,4 +77,4 @@ class ComicsCollection
             ),
             $data['etag']);
     }
-} 
+}

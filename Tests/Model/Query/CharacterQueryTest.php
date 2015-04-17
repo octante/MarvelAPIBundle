@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Query;
-
 
 use Octante\MarvelAPIBundle\Model\Query\CharacterQuery;
 
@@ -20,7 +20,7 @@ class CharacterQueryTest extends \PHPUnit_Framework_TestCase
      * with: WithAllParameters
      * should: queryStringIsBuildCorrectly
      */
-    function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
+    public function test_getQueryIsCalled_WithAllParameters_queryStringIsBuildCorrectly()
     {
         $sut = new CharacterQuery();
         $sut->setName('Zzzax');
@@ -36,12 +36,9 @@ class CharacterQueryTest extends \PHPUnit_Framework_TestCase
         $sut->setOffset(0);
 
         $url = $sut->getQuery();
-        $expected = "name=Zzzax&nameStartsWith=Zzz&modifiedSince=2015-03-25&comics=37047,37048&series=3374,3375&".
+        $expected = "name=Zzzax&nameStartsWith=Zzz&modifiedSince=2015-03-25&comics=37047,37048&series=3374,3375&" .
                     "events=3371,3372&stories=3370,3369&orderBy=-modified&limit=10&offset=0";
 
         $this->assertEquals($expected, $url);
-
-
     }
 }
- 

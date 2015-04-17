@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate;
 
@@ -20,7 +20,7 @@ class ComicDateTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: ComicIdObjectIsReturned
      */
-    function test_createIsCalled_withValidParameters_ComicIdObjectIsReturned()
+    public function test_createIsCalled_withValidParameters_ComicIdObjectIsReturned()
     {
         $sut = ComicDate::create('comic_type', 'comic_date');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\ValueObjects\ComicDate', $sut);
@@ -31,11 +31,10 @@ class ComicDateTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: parametersHasBeenCorrectlySetted
      */
-    function test_callCreate_validParameters_parametersHasBeenCorrectlySetted()
+    public function test_callCreate_validParameters_parametersHasBeenCorrectlySetted()
     {
         $sut = ComicDate::create('comic_type', 'comic_date');
         $this->assertEquals('comic_type', $sut->getType());
         $this->assertEquals('comic_date', $sut->getDate());
     }
 }
- 
