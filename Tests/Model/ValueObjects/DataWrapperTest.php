@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\ValueObjects\DataWrapper;
 
@@ -20,7 +20,7 @@ class DataWrapperTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: DataWrapperInstanceIsReturned
      */
-    function test_calledCreateMethod_withValidParameters_DataWrapperInstanceIsReturned()
+    public function test_calledCreateMethod_withValidParameters_DataWrapperInstanceIsReturned()
     {
         $dataContainerMock = $this->getDataConteinerMock();
 
@@ -42,7 +42,7 @@ class DataWrapperTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: argumentsHasBeenSetted
      */
-    function test_calledCreateMethod_withValidParameters_argumentsHasBeenSetted()
+    public function test_calledCreateMethod_withValidParameters_argumentsHasBeenSetted()
     {
         $dataContainerMock = $this->getDataConteinerMock();
 
@@ -72,7 +72,7 @@ class DataWrapperTest extends \PHPUnit_Framework_TestCase
         $dataContainerMock = $this->getMockBuilder('Octante\MarvelAPIBundle\Model\DataContainer\DataContainer')
             ->disableOriginalConstructor()
             ->getMock();
+
         return $dataContainerMock;
     }
 }
- 

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Entities;
-
 
 use Octante\MarvelAPIBundle\Factories\SerieFactory;
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
@@ -27,7 +27,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: AResourceURI
      * should: setResourceURI
      */
-    function test_serieEntityIsCreated_AResourceURI_setResourceURI()
+    public function test_serieEntityIsCreated_AResourceURI_setResourceURI()
     {
         $sut = $this->getSUT();
         $resourceURI = $sut->getResourceURI();
@@ -40,7 +40,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: thumbnail
      * should: setThumbnail
      */
-    function test_serieEntityIsCreated_thumbnail_setThumbnail()
+    public function test_serieEntityIsCreated_thumbnail_setThumbnail()
     {
         $sut = $this->getSUT();
         $thumbnail = $sut->getThumbnail();
@@ -57,7 +57,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: creators
      * should: setCreators
      */
-    function test_serieEntityIsCreated_creators_setCreators()
+    public function test_serieEntityIsCreated_creators_setCreators()
     {
         $sut = $this->getSUT();
         $creators = $sut->getCreators();
@@ -65,18 +65,18 @@ class SerieTest extends \PHPUnit_Framework_TestCase
             5,
             5,
             'http://gateway.marvel.com/v1/public/series/18454/creators',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/485",
                     "name" => "Andy Lanning",
-                    "role" => "writer"
-                ),
-                array(
+                    "role" => "writer",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/9432",
                     "name" => "Sean Ryan",
-                    "role" => "writer"
-                )
-            )
+                    "role" => "writer",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $creators);
@@ -87,7 +87,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: stories
      * should: setStories
      */
-    function test_serieEntityIsCreated_stories_setStories()
+    public function test_serieEntityIsCreated_stories_setStories()
     {
         $sut = $this->getSUT();
         $stories = $sut->getStories();
@@ -95,13 +95,13 @@ class SerieTest extends \PHPUnit_Framework_TestCase
             10,
             10,
             'http://gateway.marvel.com/v1/public/series/18454/stories',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/110101",
                     "name" => "cover from 100th Anniversary Special (2014) #1",
-                    "type" => "cover"
-                )
-            )
+                    "type" => "cover",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $stories);
@@ -112,7 +112,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: events
      * should: setEvents
      */
-    function test_serieEntityIsCreated_events_setEvents()
+    public function test_serieEntityIsCreated_events_setEvents()
     {
         $sut = $this->getSUT();
         $events = $sut->getEvents();
@@ -120,12 +120,12 @@ class SerieTest extends \PHPUnit_Framework_TestCase
             0,
             0,
             'http://gateway.marvel.com/v1/public/series/18454/events',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/events/93947",
-                    "name" => "Interior #93947"
-                )
-            )
+                    "name" => "Interior #93947",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $events);
@@ -136,7 +136,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: comics
      * should: setComics
      */
-    function test_serieEntityIsCreated_comics_setComics()
+    public function test_serieEntityIsCreated_comics_setComics()
     {
         $sut = $this->getSUT();
         $comics = $sut->getComics();
@@ -144,12 +144,12 @@ class SerieTest extends \PHPUnit_Framework_TestCase
             5,
             5,
             'http://gateway.marvel.com/v1/public/series/18454/comics',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/49011",
-                    "name" => "100th Anniversary Special (2014) #1"
-                )
-            )
+                    "name" => "100th Anniversary Special (2014) #1",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $comics);
@@ -160,7 +160,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
      * with: characters
      * should: setCharacters
      */
-    function test_characterEntityIsCreated_characters_setCharacters()
+    public function test_characterEntityIsCreated_characters_setCharacters()
     {
         $sut = $this->getSUT();
         $characters = $sut->getCharacters();
@@ -168,12 +168,12 @@ class SerieTest extends \PHPUnit_Framework_TestCase
             0,
             0,
             'http://gateway.marvel.com/v1/public/series/18454/characters',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/characters/1010370",
-                    "name" => "Alpha Flight"
-                )
-            )
+                    "name" => "Alpha Flight",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $characters);
@@ -183,7 +183,7 @@ class SerieTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getSeriesCollection.json');
         $results = json_decode($jsonResponse, true);
-        return (new SerieFactory)->createSerie($results['data']['results'][0]);
+
+        return (new SerieFactory())->createSerie($results['data']['results'][0]);
     }
 }
- 

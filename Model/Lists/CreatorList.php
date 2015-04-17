@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\CreatorSummary;
 
@@ -48,7 +48,7 @@ class CreatorList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class CreatorList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new CreatorList(
             $available,
             $returned,
@@ -84,7 +84,7 @@ class CreatorList
      */
     private static function getCreatorSummaries($items)
     {
-        $creatorSummaries = array();
+        $creatorSummaries = [];
         foreach ($items as $item) {
             $creatorSummaries[] = CreatorSummary::create(
                 $item['resourceURI'],
@@ -92,6 +92,7 @@ class CreatorList
                 $item['role']
             );
         }
+
         return $creatorSummaries;
     }
 
@@ -126,4 +127,4 @@ class CreatorList
     {
         return $this->returned;
     }
-} 
+}

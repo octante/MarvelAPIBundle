@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\CharacterSummary;
 
@@ -48,7 +48,7 @@ class CharacterList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class CharacterList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new CharacterList(
             $available,
             $returned,
@@ -84,7 +84,7 @@ class CharacterList
      */
     private static function getCharacterSummaries($items)
     {
-        $characterSummaries = array();
+        $characterSummaries = [];
         foreach ($items as $item) {
             $characterSummaries[] = CharacterSummary::create(
                 $item['resourceURI'],
@@ -92,6 +92,7 @@ class CharacterList
                 !empty($item['role']) ? $item['role'] : ''
             );
         }
+
         return $characterSummaries;
     }
 
@@ -126,4 +127,4 @@ class CharacterList
     {
         return $this->returned;
     }
-} 
+}

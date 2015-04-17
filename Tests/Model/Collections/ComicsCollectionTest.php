@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -17,9 +18,9 @@ class ComicsCollectionTest extends PHPUnit_Framework_TestCase
      * with: comicsCollectionJSONData
      * should: constructComicsDataWrapper
      */
-    function test_hidrateIsCalled_comicsCollectionJSONData_constructComicsDataWrapper()
+    public function test_hidrateIsCalled_comicsCollectionJSONData_constructComicsDataWrapper()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../../Fixtures/getComicsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getComicsCollection.json');
 
         $sut = ComicsCollection::create(json_decode($jsonResponse, true));
         $result = $sut->getComicsDataWrapper();

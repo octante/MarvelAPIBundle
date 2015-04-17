@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Lists;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 
@@ -48,7 +48,7 @@ class SerieList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         $this->available = $available;
         $this->returned = $returned;
         $this->collectionURI = $collectionURI;
@@ -68,7 +68,7 @@ class SerieList
         $returned,
         $collectionURI,
         $items
-    ){
+    ) {
         return new SerieList(
             $available,
             $returned,
@@ -84,7 +84,7 @@ class SerieList
      */
     private static function getSeriesSummaries($items)
     {
-        $seriesSummaries = array();
+        $seriesSummaries = [];
         foreach ($items as $item) {
             $seriesSummaries[] = SerieSummary::create(
                 $item['resourceURI'],
@@ -126,4 +126,4 @@ class SerieList
     {
         return $this->returned;
     }
-} 
+}

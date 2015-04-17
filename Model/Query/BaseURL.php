@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Query;
-
 
 class BaseURL
 {
@@ -37,7 +37,7 @@ class BaseURL
         $filter,
         $id = null,
         $resource = null
-    ){
+    ) {
         $this->filter   = $filter;
         $this->id       = $id;
         $this->resource = $resource;
@@ -54,7 +54,7 @@ class BaseURL
         $filter,
         $id = null,
         $resource = null
-    ){
+    ) {
         return new BaseURL(
             $filter,
             $id,
@@ -85,4 +85,4 @@ class BaseURL
 
         return $url . '?';
     }
-} 
+}

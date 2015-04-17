@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Summaries;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\CreatorSummary;
 
@@ -20,18 +20,18 @@ class CreatorSummaryTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: CreatorSummaryIsReturned
      */
-    function test_createIsCalled_validParameters_CreatorSummaryIsReturned()
+    public function test_createIsCalled_validParameters_CreatorSummaryIsReturned()
     {
         $sut = CreatorSummary::create('resource_uri', 'name', 'role');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\CreatorSummary', $sut);
     }
-    
+
     /**
      * when: createIsCalled
      * with: validParameters
      * should: parametersHasBeenSettedCorrectly
      */
-    function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
+    public function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
         $sut = CreatorSummary::create('resource_uri', 'name', 'role');
         $this->assertEquals('resource_uri', $sut->getResourceURI());
@@ -39,4 +39,3 @@ class CreatorSummaryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('role', $sut->getRole());
     }
 }
- 

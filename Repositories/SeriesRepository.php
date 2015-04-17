@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Repositories;
-
 
 use Octante\MarvelAPIBundle\Lib\Client;
 use Octante\MarvelAPIBundle\Model\Collections\CharactersCollection;
@@ -71,7 +71,7 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param int        $serieId
      * @param SerieQuery $serieQuery
      *
      * @return CharactersCollection
@@ -91,7 +91,7 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param int        $serieId
      * @param SerieQuery $serieQuery
      *
      * @return ComicsCollection
@@ -111,7 +111,7 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param int        $serieId
      * @param SerieQuery $serieQuery
      *
      * @return CreatorsCollection
@@ -131,7 +131,7 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param int        $serieId
      * @param SerieQuery $serieQuery
      *
      * @return EventsCollection
@@ -151,7 +151,7 @@ class SeriesRepository
     }
 
     /**
-     * @param int $serieId
+     * @param int        $serieId
      * @param SerieQuery $serieQuery
      *
      * @return StoriesCollection
@@ -169,4 +169,4 @@ class SeriesRepository
 
         return StoriesCollection::create(json_decode($data, true));
     }
-} 
+}

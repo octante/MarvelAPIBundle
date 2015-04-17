@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Query;
-
 
 use Octante\MarvelAPIBundle\Model\Query\BaseURL;
 
@@ -34,7 +34,7 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
      * with: OnlyFilterParameter
      * should: returnUrlWithFilterParameter
      */
-    function test_createBaseUrl_OnlyFilterParameter_returnUrlWithFilterParameter()
+    public function test_createBaseUrl_OnlyFilterParameter_returnUrlWithFilterParameter()
     {
         $baseURL = BaseURL::create('filter');
         $expected = BaseURLTest::BASE_URL . 'filter?';
@@ -46,7 +46,7 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
      * with: OnlyWithFilterAndIdParameters
      * should: returnUrlWithFilterAndIdParameters
      */
-    function test_createBaseUrl_OnlyWithFilterAndIdParameters_returnUrlWithFilterAndIdParameters()
+    public function test_createBaseUrl_OnlyWithFilterAndIdParameters_returnUrlWithFilterAndIdParameters()
     {
         $baseURL = BaseURL::create('filter', 1245);
         $expected = BaseURLTest::BASE_URL . 'filter/1245?';
@@ -60,10 +60,9 @@ class BaseURLTest extends \PHPUnit_Framework_TestCase
      *
      * @expectedException \InvalidArgumentException
      */
-    function test_createBaseUrl_OnlyFilterAndResourceParameter_throwAnException()
+    public function test_createBaseUrl_OnlyFilterAndResourceParameter_throwAnException()
     {
         $baseURL = BaseURL::create('filter', null, 'resource');
         $baseURL->getURL();
     }
 }
- 

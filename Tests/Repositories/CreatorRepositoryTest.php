@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
-
 
 use Octante\MarvelAPIBundle\Repositories\CreatorsRepository;
 
@@ -33,9 +33,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: callSendMethodFromClientClass
      */
-    function test_getCreatorIsCalled_withAQuery_callSendMethodFromClientClass()
+    public function test_getCreatorIsCalled_withAQuery_callSendMethodFromClientClass()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEmptyCreatorsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEmptyCreatorsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -51,9 +51,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: clientReturnCreatorCollection
      */
-    function test_getCreatorIsCalled_withAQuery_clientReturnCreatorCollection()
+    public function test_getCreatorIsCalled_withAQuery_clientReturnCreatorCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharactersCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCharactersCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -69,9 +69,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withACreatorId
      * should: clientReturnCreatorCollection
      */
-    function test_getCreatorByIdIsCalled_withACreatorId_clientReturnCreatorCollection()
+    public function test_getCreatorByIdIsCalled_withACreatorId_clientReturnCreatorCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCreator.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCreator.json');
 
         $this->client
             ->expects($this->once())
@@ -88,9 +88,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnComicsCollection
      */
-    function test_getComicsFromCreator_ACharacterId_clientReturnComicsCollection()
+    public function test_getComicsFromCreator_ACharacterId_clientReturnComicsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComicsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getComicsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -107,9 +107,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnComicsCollection
      */
-    function test_getEventsFromCreator_ACharacterId_clientReturnEventsCollection()
+    public function test_getEventsFromCreator_ACharacterId_clientReturnEventsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEventsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEventsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -126,9 +126,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnSeriesCollection
      */
-    function test_getSeriesFromCreator_ACharacterId_clientReturnSeriesCollection()
+    public function test_getSeriesFromCreator_ACharacterId_clientReturnSeriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSeriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getSeriesCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -145,9 +145,9 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnStoriesCollection
      */
-    function test_getStoriesFromCreator_ACharacterId_clientReturnStoriesCollection()
+    public function test_getStoriesFromCreator_ACharacterId_clientReturnStoriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSeriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getSeriesCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -159,4 +159,3 @@ class CreatorRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\StoriesCollection', $characterData);
     }
 }
- 

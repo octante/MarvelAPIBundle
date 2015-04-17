@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Summaries;
-
 
 use Octante\MarvelAPIBundle\Model\Summaries\ComicSummary;
 
@@ -20,7 +20,7 @@ class ComicSummaryTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: EventSummaryIsReturned
      */
-    function test_createIsCalled_validParameters_SerieSummaryIsReturned()
+    public function test_createIsCalled_validParameters_SerieSummaryIsReturned()
     {
         $sut = ComicSummary::create('resource_uri', 'name');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\ComicSummary', $sut);
@@ -31,11 +31,10 @@ class ComicSummaryTest extends \PHPUnit_Framework_TestCase
      * with: validParameters
      * should: parametersHasBeenSettedCorrectly
      */
-    function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
+    public function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
         $sut = ComicSummary::create('resource_uri', 'name');
         $this->assertEquals('resource_uri', $sut->getResourceURI());
         $this->assertEquals('name', $sut->getName());
     }
 }
- 

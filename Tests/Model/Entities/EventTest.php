@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Entities;
-
 
 use Octante\MarvelAPIBundle\Factories\EventFactory;
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
@@ -28,7 +28,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: AResourceURI
      * should: setResourceURI
      */
-    function test_eventEntityIsCreated_AResourceURI_setResourceURI()
+    public function test_eventEntityIsCreated_AResourceURI_setResourceURI()
     {
         $sut = $this->getSUT();
         $resourceURI = $sut->getResourceURI();
@@ -41,7 +41,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: thumbnail
      * should: setThumbnail
      */
-    function test_eventEntityIsCreated_thumbnail_setThumbnail()
+    public function test_eventEntityIsCreated_thumbnail_setThumbnail()
     {
         $sut = $this->getSUT();
         $thumbnail = $sut->getThumbnail();
@@ -58,7 +58,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: creators
      * should: setCreators
      */
-    function test_eventEntityIsCreated_creators_setCreators()
+    public function test_eventEntityIsCreated_creators_setCreators()
     {
         $sut = $this->getSUT();
         $creators = $sut->getCreators();
@@ -66,18 +66,18 @@ class EventTest extends \PHPUnit_Framework_TestCase
             115,
             20,
             'http://gateway.marvel.com/v1/public/events/116/creators',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/2707",
                     "name" => "Jeff Albrecht",
-                    "role" => "inker"
-                ),
-                array(
+                    "role" => "inker",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/creators/2077",
                     "name" => "Hilary Barta",
-                    "role" => "inker"
-                )
-            )
+                    "role" => "inker",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $creators);
@@ -88,7 +88,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: stories
      * should: setStories
      */
-    function test_eventEntityIsCreated_stories_setStories()
+    public function test_eventEntityIsCreated_stories_setStories()
     {
         $sut = $this->getSUT();
         $stories = $sut->getStories();
@@ -96,18 +96,18 @@ class EventTest extends \PHPUnit_Framework_TestCase
             145,
             20,
             'http://gateway.marvel.com/v1/public/events/116/stories',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/12960",
                     "name" => "Cover #12960",
-                    "type" => "cover"
-                ),
-                array(
+                    "type" => "cover",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/stories/12961",
                     "name" => "Shadows of Alarm..!",
-                    "type" => "interiorStory"
-                )
-            )
+                    "type" => "interiorStory",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $stories);
@@ -118,7 +118,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: comics
      * should: setComics
      */
-    function test_eventEntityIsCreated_comics_setComics()
+    public function test_eventEntityIsCreated_comics_setComics()
     {
         $sut = $this->getSUT();
         $comics = $sut->getComics();
@@ -126,16 +126,16 @@ class EventTest extends \PHPUnit_Framework_TestCase
             52,
             20,
             'http://gateway.marvel.com/v1/public/events/116/comics',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/12744",
-                    "name" => "Alpha Flight (1983) #79"
-                ),
-                array(
+                    "name" => "Alpha Flight (1983) #79",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/comics/12746",
-                    "name" => "Alpha Flight (1983) #80"
-                )
-            )
+                    "name" => "Alpha Flight (1983) #80",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $comics);
@@ -146,7 +146,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: series
      * should: setSeries
      */
-    function test_eventEntityIsCreated_series_setSeries()
+    public function test_eventEntityIsCreated_series_setSeries()
     {
         $sut = $this->getSUT();
         $series = $sut->getSeries();
@@ -154,16 +154,16 @@ class EventTest extends \PHPUnit_Framework_TestCase
             22,
             20,
             'http://gateway.marvel.com/v1/public/events/116/series',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/series/2116",
-                    "name" => "Alpha Flight (1983 - 1994)"
-                ),
-                array(
+                    "name" => "Alpha Flight (1983 - 1994)",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/series/1987",
-                    "name" => "Amazing Spider-Man (1963 - 1998)"
-                )
-            )
+                    "name" => "Amazing Spider-Man (1963 - 1998)",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $series);
@@ -174,7 +174,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: next
      * should: setNext
      */
-    function test_eventEntityIsCreated_next_setNext()
+    public function test_eventEntityIsCreated_next_setNext()
     {
         $sut = $this->getSUT();
         $next = $sut->getNext();
@@ -191,7 +191,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: previous
      * should: setPrevious
      */
-    function test_eventEntityIsCreated_previous_setPrevious()
+    public function test_eventEntityIsCreated_previous_setPrevious()
     {
         $sut = $this->getSUT();
         $previous = $sut->getPrevious();
@@ -208,7 +208,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
      * with: characters
      * should: setCharacters
      */
-    function test_eventEntityIsCreated_characters_setCharacters()
+    public function test_eventEntityIsCreated_characters_setCharacters()
     {
         $sut = $this->getSUT();
         $characters = $sut->getCharacters();
@@ -216,16 +216,16 @@ class EventTest extends \PHPUnit_Framework_TestCase
             67,
             20,
             'http://gateway.marvel.com/v1/public/events/116/characters',
-            array(
-                array(
+            [
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/characters/1010370",
-                    "name" => "Alpha Flight"
-                ),
-                array(
+                    "name" => "Alpha Flight",
+                ],
+                [
                     "resourceURI" => "http://gateway.marvel.com/v1/public/characters/1009152",
-                    "name" => "Ancient One"
-                )
-            )
+                    "name" => "Ancient One",
+                ],
+            ]
         );
 
         $this->assertEquals($expected, $characters);
@@ -235,7 +235,7 @@ class EventTest extends \PHPUnit_Framework_TestCase
     {
         $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getEventsCollection.json');
         $results = json_decode($jsonResponse, true);
-        return (new EventFactory)->createEvent($results['data']['results'][0]);
+
+        return (new EventFactory())->createEvent($results['data']['results'][0]);
     }
 }
- 

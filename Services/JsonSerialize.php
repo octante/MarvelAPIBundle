@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the UrbanGarden package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,10 +11,9 @@
 
 namespace Octante\MarvelAPIBundle\Services;
 
-use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
-
+use Symfony\Component\Serializer\Serializer;
 
 class JsonSerialize
 {
@@ -24,8 +24,8 @@ class JsonSerialize
 
     public function __construct()
     {
-        $encoders = array(new JsonEncoder());
-        $normalizers = array(new GetSetMethodNormalizer());
+        $encoders = [new JsonEncoder()];
+        $normalizers = [new GetSetMethodNormalizer()];
 
         $this->serializer = new Serializer($normalizers, $encoders);
     }
@@ -39,4 +39,4 @@ class JsonSerialize
     {
         return $this->serializer->serialize($data, 'json');
     }
-} 
+}

@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
-
 
 use Octante\MarvelAPIBundle\Repositories\CharactersRepository;
 
@@ -34,9 +34,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: callSendMethodFromClientClass
      */
-    function test_getCharacterIsCalled_withAQuery_callSendMethodFromClientClass()
+    public function test_getCharacterIsCalled_withAQuery_callSendMethodFromClientClass()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEmptyCharactersCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEmptyCharactersCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -52,9 +52,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: clientReturnCharacterCollection
      */
-    function test_getCharacterIsCalled_withAQuery_clientReturnCharacterCollection()
+    public function test_getCharacterIsCalled_withAQuery_clientReturnCharacterCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharactersCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCharactersCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -70,9 +70,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withACharacterId
      * should: clientReturnCharacterCollection
      */
-    function test_getCharacterByIdIsCalled_withACharacterId_clientReturnCharacterCollection()
+    public function test_getCharacterByIdIsCalled_withACharacterId_clientReturnCharacterCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharacter.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCharacter.json');
 
         $this->client
             ->expects($this->once())
@@ -89,9 +89,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: ACharacterId
      * should: clientReturnComicsCollection
      */
-    function test_getComicsFromCharacter_ACharacterId_clientReturnComicsCollection()
+    public function test_getComicsFromCharacter_ACharacterId_clientReturnComicsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComicsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getComicsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -108,9 +108,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: ACharacterId
      * should: clientReturnEventsCollection
      */
-    function test_getEventsFromCharacter_ACharacterId_clientReturnEventsCollection()
+    public function test_getEventsFromCharacter_ACharacterId_clientReturnEventsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEventsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEventsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -127,9 +127,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: ACharacterId
      * should: clientReturnSeriesCollection
      */
-    function test_getSeriesFromCharacter_ACharacterId_clientReturnSeriesCollection()
+    public function test_getSeriesFromCharacter_ACharacterId_clientReturnSeriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSeriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getSeriesCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -146,9 +146,9 @@ class CharacterRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: ACharacterId
      * should: clientReturnStoriesCollection
      */
-    function test_getStoriesFromCharacter_ACharacterId_clientReturnStoriesCollection()
+    public function test_getStoriesFromCharacter_ACharacterId_clientReturnStoriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getStoriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getStoriesCollection.json');
 
         $this->client
             ->expects($this->once())

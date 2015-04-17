@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 use Octante\MarvelAPIBundle\Model\Collections\EventsCollection;
-use Octante\MarvelAPIBundle\Model\Collections\StoriesCollection;
 
 class EventsCollectionTest extends PHPUnit_Framework_TestCase
 {
@@ -18,9 +18,9 @@ class EventsCollectionTest extends PHPUnit_Framework_TestCase
      * with: seriesCollectionJSONData
      * should: constructSeriesDataWrapper
      */
-    function test_hidrateIsCalled_seriesCollectionJSONData_constructSeriesDataWrapper()
+    public function test_hidrateIsCalled_seriesCollectionJSONData_constructSeriesDataWrapper()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../../Fixtures/getStoriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../../Fixtures/getStoriesCollection.json');
 
         $sut = EventsCollection::create(json_decode($jsonResponse, true));
         $result = $sut->getEventsDataWrapper();

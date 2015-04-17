@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\Entities;
-
 
 use Octante\MarvelAPIBundle\Model\Lists\CharacterList;
 use Octante\MarvelAPIBundle\Model\Lists\ComicList;
@@ -336,4 +336,4 @@ class Story
     {
         return $this->originalIssue;
     }
-} 
+}

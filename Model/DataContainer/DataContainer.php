@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Model\DataContainer;
-
 
 class DataContainer
 {
@@ -51,7 +51,7 @@ class DataContainer
         $total,
         $count,
         $results
-    ){
+    ) {
         $this->offset = $offset;
         $this->limit = $limit;
         $this->total = $total;
@@ -76,7 +76,7 @@ class DataContainer
         $total,
         $count,
         $results
-    ){
+    ) {
         if (!is_numeric($offset)) {
             throw new \InvalidArgumentException("Invalid offset \"$offset\"");
         }
@@ -107,7 +107,7 @@ class DataContainer
      */
     protected static function getItems($results)
     {
-        return array();
+        return [];
     }
 
     /**
@@ -149,4 +149,4 @@ class DataContainer
     {
         return $this->total;
     }
-} 
+}

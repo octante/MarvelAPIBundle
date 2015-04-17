@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace ValueObjects;
-
 
 use Octante\MarvelAPIBundle\Model\ValueObjects\TextObject;
 
@@ -20,7 +20,7 @@ class TextObjectTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: TextObjectInstanceIsReturned
      */
-    function test_createIsCalled_withValidParameters_TextObjectInstanceIsReturned()
+    public function test_createIsCalled_withValidParameters_TextObjectInstanceIsReturned()
     {
         $sut = TextObject::create('type', 'language', 'text');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\ValueObjects\TextObject', $sut);
@@ -31,7 +31,7 @@ class TextObjectTest extends \PHPUnit_Framework_TestCase
      * with: withValidParameters
      * should: parametersHasBeenSettedCorrectly
      */
-    function test_createIsCalled_withValidParameters_parametersHasBeenSettedCorrectly()
+    public function test_createIsCalled_withValidParameters_parametersHasBeenSettedCorrectly()
     {
         $sut = TextObject::create('type', 'language', 'text');
         $this->assertEquals('type', $sut->getType());
@@ -39,4 +39,3 @@ class TextObjectTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('text', $sut->getText());
     }
 }
- 

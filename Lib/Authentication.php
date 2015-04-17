@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Lib;
-
 
 class Authentication
 {
@@ -31,7 +31,7 @@ class Authentication
     /**
      * @param string $privateKey
      * @param string $publicKey
-     * @param null $ts
+     * @param null   $ts
      */
     public function __construct($privateKey, $publicKey, $ts = null)
     {
@@ -59,4 +59,4 @@ class Authentication
     {
         return '&ts=' . $this->ts . '&apikey=' . $this->publicKey . '&hash=' . $this->getHash();
     }
-} 
+}

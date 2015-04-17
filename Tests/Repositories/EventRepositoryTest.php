@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -9,7 +10,6 @@
  */
 
 namespace Octante\MarvelAPIBundle\Tests\Repositories;
-
 
 use Octante\MarvelAPIBundle\Repositories\EventsRepository;
 
@@ -33,9 +33,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: callSendMethodFromClientClass
      */
-    function test_getEventIsCalled_withAQuery_callSendMethodFromClientClass()
+    public function test_getEventIsCalled_withAQuery_callSendMethodFromClientClass()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEmptyEventsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEmptyEventsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -51,9 +51,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAQuery
      * should: clientReturnEventsCollection
      */
-    function test_getEventIsCalled_withAQuery_clientReturnEventsCollection()
+    public function test_getEventIsCalled_withAQuery_clientReturnEventsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEventsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEventsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -69,9 +69,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: withAnEventId
      * should: clientReturnEventsCollection
      */
-    function test_getEventByIdIsCalled_withAnEventId_clientReturnEventsCollection()
+    public function test_getEventByIdIsCalled_withAnEventId_clientReturnEventsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getEvent.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getEvent.json');
 
         $this->client
             ->expects($this->once())
@@ -88,9 +88,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnCharactersCollection
      */
-    function test_getCharactersFromCreator_ACharacterId_clientReturnCharactersCollection()
+    public function test_getCharactersFromCreator_ACharacterId_clientReturnCharactersCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCharactersCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCharactersCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -107,9 +107,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnComicsCollection
      */
-    function test_getComicsFromEvent_ACharacterId_clientReturnComicsCollection()
+    public function test_getComicsFromEvent_ACharacterId_clientReturnComicsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getComicsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getComicsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -126,9 +126,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnCreatorsCollection
      */
-    function test_getCreatorsFromEvent_ACharacterId_clientReturnCreatorsCollection()
+    public function test_getCreatorsFromEvent_ACharacterId_clientReturnCreatorsCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getCreatorsCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getCreatorsCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -145,9 +145,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnSeriesCollection
      */
-    function test_getSeriesFromEvent_ACharacterId_clientReturnSeriesCollection()
+    public function test_getSeriesFromEvent_ACharacterId_clientReturnSeriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getSeriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getSeriesCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -164,9 +164,9 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
      * with: AComicId
      * should: clientReturnStoriesCollection
      */
-    function test_getStoriesFromEvent_ACharacterId_clientReturnSeriesCollection()
+    public function test_getStoriesFromEvent_ACharacterId_clientReturnSeriesCollection()
     {
-        $jsonResponse = file_get_contents (__DIR__ . '/../Fixtures/getStoriesCollection.json');
+        $jsonResponse = file_get_contents(__DIR__ . '/../Fixtures/getStoriesCollection.json');
 
         $this->client
             ->expects($this->once())
@@ -178,4 +178,3 @@ class EventRepositoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Collections\StoriesCollection', $characterData);
     }
 }
- 

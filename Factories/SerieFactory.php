@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -15,6 +16,9 @@ use Octante\MarvelAPIBundle\Model\Summaries\SerieSummary;
 use Octante\MarvelAPIBundle\Model\ValueObjects\SerieId;
 use Octante\MarvelAPIBundle\Model\ValueObjects\URI;
 
+/**
+ * Class SerieFactory
+ */
 class SerieFactory extends AbstractFactory
 {
     /**
@@ -32,7 +36,7 @@ class SerieFactory extends AbstractFactory
         if (isset($serieData['description'])) {
             $serie->setDescription($serieData['description']);
         }
-        if (isset($serieData['modified'])){
+        if (isset($serieData['modified'])) {
             $serie->setModified($serieData['modified']);
         }
         if (isset($serieData['resourceURI'])) {
@@ -85,4 +89,4 @@ class SerieFactory extends AbstractFactory
 
         return $serie;
     }
-} 
+}

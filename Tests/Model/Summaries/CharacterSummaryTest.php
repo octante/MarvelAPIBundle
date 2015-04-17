@@ -1,6 +1,7 @@
 <?php
+
 /*
- * This file is part of the MarvelAPIBundle package.
+ * This file is part of the OctanteMarvelAPI package.
  *
  * (c) Issel Guberna <issel.guberna@gmail.com>
  *
@@ -10,28 +11,27 @@
 
 namespace Summaries;
 
-
 use Octante\MarvelAPIBundle\Model\Summaries\CharacterSummary;
 
-class CharacterSummaryTest extends \PHPUnit_Framework_TestCase 
+class CharacterSummaryTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * when: createIsCalled
      * with: validParameters
      * should: CharactersSummaryIsReturned
      */
-    function test_createIsCalled_validParameters_CharactersSummaryIsReturned()
+    public function test_createIsCalled_validParameters_CharactersSummaryIsReturned()
     {
         $sut = CharacterSummary::create('resource_uri', 'name', 'role');
         $this->assertInstanceOf('Octante\MarvelAPIBundle\Model\Summaries\CharacterSummary', $sut);
     }
-    
+
     /**
      * when: createIsCalled
      * with: validParameters
      * should: parametersHasBeenSettedCorrectly
      */
-    function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
+    public function test_createIsCalled_validParameters_parametersHasBeenSettedCorrectly()
     {
         $sut = CharacterSummary::create('resource_uri', 'name', 'role');
         $this->assertEquals('resource_uri', $sut->getResourceURI());
@@ -39,4 +39,3 @@ class CharacterSummaryTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('role', $sut->getRole());
     }
 }
- 
