@@ -14,7 +14,7 @@
     "require": {
         "php": ">=5.4.0",
         "symfony/framework-bundle": "2.*",
-        "symfony/serializer": "3.0.*@dev"
+        "symfony/serializer": "2.8.*@dev"
     },
     "autoload": {
         "psr-4": {"Octante\\MarvelAPIBundle\\": ""}
